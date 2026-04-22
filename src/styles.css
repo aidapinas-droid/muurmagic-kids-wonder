@@ -23,6 +23,7 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Quicksand", system-ui, sans-serif;
   --font-nunito: "Nunito", system-ui, sans-serif;
+  --font-baloo: "Baloo 2", "Nunito", system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
