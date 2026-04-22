@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Sparkle, Star } from "./Sparkle";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Wand2 } from "lucide-react";
 import heroRoom from "@/assets/hero-room.jpg";
+import muurmagicLogo from "@/assets/muurmagic-logo.png";
 
 export function Hero() {
   return (
