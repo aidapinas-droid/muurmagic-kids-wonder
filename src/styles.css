@@ -245,3 +245,15 @@
 .font-nunito {
   font-family: var(--font-nunito);
 }
+.font-baloo {
+  font-family: var(--font-baloo);
+}
+
+/* Gold sparkle drift */
+@keyframes drift-sparkle {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateY(-10px) rotate(15deg); opacity: 1; }
+}
+.animate-drift-sparkle {
+  animation: drift-sparkle 3.5s ease-in-out infinite;
+}
