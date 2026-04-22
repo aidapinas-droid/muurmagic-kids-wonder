@@ -86,7 +86,7 @@ function ProductCard({ product }: { product: Product }) {
           width={800}
           height={800}
           loading="lazy"
-          className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 [filter:drop-shadow(0_10px_14px_rgba(80,40,100,0.18))_drop-shadow(0_4px_6px_rgba(80,40,100,0.12))]"
         />
         {product.tag && (
           <span className="absolute left-4 top-4 rounded-full bg-card px-3 py-1 font-body text-xs font-bold text-primary shadow-soft">
