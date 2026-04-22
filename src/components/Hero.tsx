@@ -33,6 +33,76 @@ export function Hero() {
         color="oklch(0.78 0.11 175)"
       />
 
+      {/* Centered logo block with glow, tagline & CTA */}
+      <div className="relative mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+        <div className="relative mx-auto flex flex-col items-center text-center">
+          {/* Floating gold sparkles around the logo */}
+          <GoldSparkle className="absolute left-[6%] top-4 animate-twinkle" size={14} />
+          <GoldSparkle
+            className="absolute right-[8%] top-10 animate-twinkle"
+            size={18}
+            style={{ animationDelay: "0.6s" }}
+          />
+          <GoldSparkle
+            className="absolute left-[18%] top-40 animate-twinkle"
+            size={12}
+            style={{ animationDelay: "1.1s" }}
+          />
+          <GoldSparkle
+            className="absolute right-[14%] top-52 animate-twinkle"
+            size={16}
+            style={{ animationDelay: "1.6s" }}
+          />
+          <GoldSparkle
+            className="absolute left-[4%] top-72 animate-twinkle"
+            size={10}
+            style={{ animationDelay: "2.1s" }}
+          />
+          <GoldSparkle
+            className="absolute right-[4%] top-80 animate-twinkle"
+            size={14}
+            style={{ animationDelay: "0.3s" }}
+          />
+
+          <div className="relative animate-float-hero">
+            <div
+              className="pointer-events-none absolute inset-0 -z-10 rounded-full blur-3xl animate-glow-purple"
+              style={{
+                background:
+                  "radial-gradient(closest-side, oklch(0.58 0.13 315 / 0.55), transparent 70%)",
+              }}
+              aria-hidden="true"
+            />
+            <img
+              src={muurmagicLogo}
+              alt="MuurMagic — Tover jouw muur in een wonderwereld"
+              width={640}
+              height={640}
+              className="relative h-auto w-[280px] drop-shadow-xl sm:w-[380px] lg:w-[460px]"
+            />
+          </div>
+
+          <p className="mt-6 font-nunito text-2xl font-extrabold leading-tight tracking-wide text-primary sm:text-3xl lg:text-4xl">
+            Tover jouw muur in een wonderwereld
+          </p>
+          <p className="mt-3 font-nunito text-base font-medium tracking-[0.04em] text-muted-foreground sm:text-lg">
+            Turn any wall into magic
+          </p>
+
+          <Button
+            asChild
+            size="lg"
+            className="cta-mint-glow mt-8 h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground hover:scale-[1.03]"
+            style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
+          >
+            <a href="#shop">
+              <Wand2 className="mr-2 h-5 w-5" />
+              Start jouw muur magie
+            </a>
+          </Button>
+        </div>
+      </div>
+
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:py-24 lg:px-8">
         <div className="relative z-10 text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-card/80 px-4 py-1.5 font-body text-xs font-bold uppercase tracking-widest text-primary shadow-soft backdrop-blur">
@@ -136,6 +206,34 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function GoldSparkle({
+  className = "",
+  size = 14,
+  style,
+}: {
+  className?: string;
+  size?: number;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={style}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 2 L13.5 9.5 L21 11 L13.5 12.5 L12 20 L10.5 12.5 L3 11 L10.5 9.5 Z"
+        fill="#F2C46D"
+      />
+    </svg>
   );
 }
 
