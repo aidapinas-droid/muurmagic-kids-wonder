@@ -101,6 +101,61 @@ export function Hero() {
             </a>
           </Button>
         </div>
+
+        {/* New magical headline block */}
+        <div className="relative mx-auto mt-20 max-w-4xl text-center sm:mt-24">
+          {/* Floating gold sparkles around the headline */}
+          <GoldSparkle
+            className="absolute -left-2 -top-4 animate-drift-sparkle sm:left-[6%] sm:-top-2"
+            size={18}
+          />
+          <GoldSparkle
+            className="absolute right-0 -top-6 animate-drift-sparkle sm:right-[8%]"
+            size={22}
+            style={{ animationDelay: "0.7s" }}
+          />
+          <GoldSparkle
+            className="absolute left-[10%] top-1/2 animate-drift-sparkle"
+            size={14}
+            style={{ animationDelay: "1.2s" }}
+          />
+          <GoldSparkle
+            className="absolute right-[6%] top-2/3 animate-drift-sparkle"
+            size={16}
+            style={{ animationDelay: "1.8s" }}
+          />
+          <GoldSparkle
+            className="absolute -left-1 bottom-10 animate-drift-sparkle sm:left-[14%]"
+            size={12}
+            style={{ animationDelay: "2.3s" }}
+          />
+          <GoldSparkle
+            className="absolute right-[18%] bottom-4 animate-drift-sparkle"
+            size={20}
+            style={{ animationDelay: "0.4s" }}
+          />
+
+          <h2 className="font-baloo text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
+            Where rooms become magic <br className="hidden sm:block" />
+            and parties come to life
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl font-nunito text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
+            Waar kamers magie worden en feestjes tot leven komen
+          </p>
+
+          <Button
+            asChild
+            size="lg"
+            className="cta-mint-glow mt-8 h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground hover:scale-[1.03]"
+            style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
+          >
+            <a href="#shop">
+              Shop the magic
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </div>
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:py-24 lg:px-8">
