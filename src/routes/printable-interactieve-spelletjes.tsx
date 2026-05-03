@@ -283,7 +283,10 @@ function PrintablePage() {
           </div>
         </section>
 
-        {/* EDUCATIONAL VALUE */}
+        {/* PHOTO BANNER + PRODUCTS */}
+        <ProductsSection />
+
+
         <section className="bg-background py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
