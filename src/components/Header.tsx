@@ -65,16 +65,27 @@ export function Header() {
       {open && (
         <div className="border-t border-border/40 bg-background md:hidden">
           <nav className="flex flex-col gap-1 px-4 py-3">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 font-body font-semibold text-foreground hover:bg-muted"
-              >
-                {l.label}
-              </a>
-            ))}
+            {links.map((l) =>
+              l.to ? (
+                <Link
+                  key={l.href}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-3 py-3 font-body font-semibold text-foreground hover:bg-muted"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-3 py-3 font-body font-semibold text-foreground hover:bg-muted"
+                >
+                  {l.label}
+                </a>
+              ),
+            )}
             <Button className="mt-2 rounded-full bg-primary text-primary-foreground">
               <ShoppingBag className="mr-2 h-4 w-4" />
               Cart (0)
