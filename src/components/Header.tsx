@@ -22,15 +22,25 @@ export function Header() {
         <Logo />
 
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="font-body text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.to ? (
+              <Link
+                key={l.href}
+                to={l.to}
+                className="font-body text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="font-body text-sm font-semibold text-foreground/80 transition-colors hover:text-primary"
+              >
+                {l.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-2">
