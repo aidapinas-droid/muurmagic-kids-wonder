@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -282,7 +283,10 @@ function PrintablePage() {
           </div>
         </section>
 
-        {/* EDUCATIONAL VALUE */}
+        {/* PHOTO BANNER + PRODUCTS */}
+        <ProductsSection />
+
+
         <section className="bg-background py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
@@ -378,5 +382,322 @@ function PrintablePage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+type Variant = {
+  id: "pdf" | "diy" | "complete";
+  emoji: string;
+  tab: string;
+  label: string;
+  price: string;
+  description: string;
+  badge: string;
+  badgeBg: string;
+  cta: string;
+};
+
+type Product = {
+  id: string;
+  emoji: string;
+  title: string;
+  accent: string;
+  variants: Variant[];
+  eduBadges: string[];
+  extras?: { label: string; options: string[] };
+  colors?: { emoji: string; name: string }[];
+};
+
+const products: Product[] = [
+  {
+    id: "kleurtas",
+    emoji: "🌈",
+    title: "Speel & Ontdek Kleuren – Pak & Plak KleurTas",
+    accent: "bg-rose/25",
+    colors: [
+      { emoji: "🔵", name: "Blauw" },
+      { emoji: "🔴", name: "Rood" },
+      { emoji: "🟡", name: "Geel" },
+      { emoji: "🟢", name: "Groen" },
+      { emoji: "🟠", name: "Oranje" },
+      { emoji: "🌸", name: "Roze" },
+    ],
+    eduBadges: ["Kleuren leren", "Fijne motoriek", "Leeftijd 3+", "Herbruikbaar"],
+    variants: [
+      {
+        id: "pdf",
+        emoji: "🖨️",
+        tab: "📥 PDF",
+        label: "Printable PDF",
+        price: "€4,99",
+        description:
+          "Download, print en speel! Inclusief alle kleurenpagina's en figuurtjes. Zelf lamineren en uitknippen.",
+        badge: "Digitaal — Direct beschikbaar",
+        badgeBg: "bg-primary/30 text-primary",
+        cta: "Download nu",
+      },
+      {
+        id: "diy",
+        emoji: "✂️",
+        tab: "✂️ DIY",
+        label: "Semi-product",
+        price: "€9,99",
+        description:
+          "Wij printen en lamineren. Jij knipt uit en assembleert. Inclusief instructies.",
+        badge: "DIY Pakket",
+        badgeBg: "bg-mint/50 text-mint-foreground",
+        cta: "Bestel pakket",
+      },
+      {
+        id: "complete",
+        emoji: "🎁",
+        tab: "🎁 Compleet",
+        label: "Compleet product",
+        price: "€19,99",
+        description:
+          "Kant en klaar om mee te spelen. Gelamineerd, uitgeknipt, met velcro figuurtjes. Direct uit de doos spelen!",
+        badge: "Bestseller",
+        badgeBg: "bg-rose/60 text-rose-foreground",
+        cta: "Koop compleet",
+      },
+    ],
+  },
+  {
+    id: "az",
+    emoji: "🔤",
+    title: "A-Z Onderweg Trace & Play Set",
+    accent: "bg-mint/25",
+    extras: { label: "Formaat", options: ["Mini (reisformaat)", "A4 (groot formaat)"] },
+    eduBadges: [
+      "Alfabet leren",
+      "Schrijven oefenen",
+      "Leeftijd 3+",
+      "Wisbaar & herbruikbaar",
+      "Ideaal voor onderweg",
+    ],
+    variants: [
+      {
+        id: "pdf",
+        emoji: "🖨️",
+        tab: "📥 PDF",
+        label: "Printable PDF",
+        price: "€5,99",
+        description:
+          "Download en print alle 26 letterkaarten A tot Z. Gebruik met whiteboard stift — wisbaar en herbruikbaar!",
+        badge: "Digitaal — Direct beschikbaar",
+        badgeBg: "bg-primary/30 text-primary",
+        cta: "Download nu",
+      },
+      {
+        id: "diy",
+        emoji: "✂️",
+        tab: "✂️ DIY",
+        label: "Semi-product",
+        price: "€11,99",
+        description:
+          "Geprint en gelamineerd geleverd. Jij knipt de kaarten uit. Inclusief instructies.",
+        badge: "DIY Pakket",
+        badgeBg: "bg-mint/50 text-mint-foreground",
+        cta: "Bestel pakket",
+      },
+      {
+        id: "complete",
+        emoji: "🎁",
+        tab: "🎁 Compleet",
+        label: "Compleet product",
+        price: "€22,99",
+        description:
+          "Alle 26 letterkaarten kant en klaar. Inclusief whiteboard stift. Direct gebruiken!",
+        badge: "Meest Compleet",
+        badgeBg: "bg-rose/60 text-rose-foreground",
+        cta: "Koop compleet",
+      },
+    ],
+  },
+  {
+    id: "spellenboek",
+    emoji: "📖",
+    title: "Interactief Spellenboek",
+    accent: "bg-primary/15",
+    eduBadges: [
+      "Leren door spelen",
+      "Fantasie & creativiteit",
+      "Leeftijd 3+",
+      "Herbruikbaar",
+    ],
+    variants: [
+      {
+        id: "pdf",
+        emoji: "🖨️",
+        tab: "📥 PDF",
+        label: "Printable PDF",
+        price: "€6,99",
+        description:
+          "Download het complete spellenboek. Print, lamineer en speel! Kawaii stijl geïnspireerd op populaire kinderthema's.",
+        badge: "Digitaal — Direct beschikbaar",
+        badgeBg: "bg-primary/30 text-primary",
+        cta: "Download nu",
+      },
+      {
+        id: "diy",
+        emoji: "✂️",
+        tab: "✂️ DIY",
+        label: "Semi-product",
+        price: "€13,99",
+        description:
+          "Geprint en gelamineerd. Jij knipt uit en assembleert het boek. Inclusief stap-voor-stap instructies.",
+        badge: "DIY Pakket",
+        badgeBg: "bg-mint/50 text-mint-foreground",
+        cta: "Bestel pakket",
+      },
+      {
+        id: "complete",
+        emoji: "🎁",
+        tab: "🎁 Compleet",
+        label: "Compleet product",
+        price: "€24,99",
+        description:
+          "Kant en klaar spellenboek met losse figuurtjes. Direct uit de doos spelen!",
+        badge: "Premium Set",
+        badgeBg: "bg-gold/60 text-foreground",
+        cta: "Koop compleet",
+      },
+    ],
+  },
+];
+
+function ProductCard({ product }: { product: Product }) {
+  const [activeId, setActiveId] = useState<Variant["id"]>("complete");
+  const active = product.variants.find((v) => v.id === activeId)!;
+
+  return (
+    <article
+      className={
+        "group relative overflow-hidden rounded-3xl border border-border/60 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-magic sm:p-8 " +
+        product.accent
+      }
+    >
+      <div className="flex items-start gap-4">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-card text-4xl shadow-soft">
+          <span aria-hidden>{product.emoji}</span>
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-baloo text-2xl font-extrabold leading-tight text-foreground">
+            {product.title}
+          </h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {product.eduBadges.map((b) => (
+              <span
+                key={b}
+                className="rounded-full bg-card/80 px-3 py-1 font-nunito text-xs font-bold text-foreground shadow-soft"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Variant tabs */}
+      <div className="mt-6 grid grid-cols-3 gap-2 rounded-2xl bg-card/70 p-1 shadow-soft">
+        {product.variants.map((v) => (
+          <button
+            key={v.id}
+            onClick={() => setActiveId(v.id)}
+            className={
+              "rounded-xl px-2 py-2 font-nunito text-xs font-bold transition-all sm:text-sm " +
+              (activeId === v.id
+                ? "bg-primary text-primary-foreground shadow-soft"
+                : "text-foreground/70 hover:bg-background/60")
+            }
+          >
+            {v.tab}
+          </button>
+        ))}
+      </div>
+
+      {/* Active variant */}
+      <div className="mt-5 rounded-2xl bg-card/80 p-5 shadow-soft">
+        <div className="flex items-center justify-between gap-3">
+          <span
+            className={
+              "rounded-full px-3 py-1 font-nunito text-xs font-bold shadow-soft " +
+              active.badgeBg
+            }
+          >
+            {active.badge}
+          </span>
+          <span className="font-baloo text-2xl font-extrabold text-primary">
+            {active.price}
+          </span>
+        </div>
+        <p className="mt-3 font-nunito text-sm leading-relaxed text-muted-foreground">
+          {active.description}
+        </p>
+
+        {product.colors && (
+          <div className="mt-4">
+            <p className="font-nunito text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Kleur
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {product.colors.map((c) => (
+                <button
+                  key={c.name}
+                  className="flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 font-nunito text-xs font-bold text-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40"
+                >
+                  <span aria-hidden>{c.emoji}</span>
+                  {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {product.extras && (
+          <div className="mt-4">
+            <p className="font-nunito text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              {product.extras.label}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {product.extras.options.map((o) => (
+                <button
+                  key={o}
+                  className="rounded-full border border-border bg-background px-3 py-1.5 font-nunito text-xs font-bold text-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/40"
+                >
+                  {o}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <Button className="mt-5 w-full cta-mint-glow rounded-full bg-mint font-baloo text-base font-bold text-mint-foreground hover:bg-mint">
+          {active.cta}
+        </Button>
+      </div>
+    </article>
+  );
+}
+
+function ProductsSection() {
+  return (
+    <section className="bg-background py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Photo banner */}
+        <div
+          className="mb-10 rounded-2xl border border-gold/40 px-5 py-4 text-center font-nunito text-sm font-bold text-foreground shadow-soft sm:text-base"
+          style={{ backgroundColor: "#FFF3CC" }}
+        >
+          📸 Productfoto's komen binnenkort — maar je kunt nu al bestellen!
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {products.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
