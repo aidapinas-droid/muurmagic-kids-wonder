@@ -4,8 +4,11 @@ import { Logo } from "./Logo";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const links = [
+type NavLink = { label: string; href: string; to?: string };
+
+const links: NavLink[] = [
   { label: "Shop", href: "#shop" },
+  { label: "Spelletjes", href: "/printable-interactieve-spelletjes", to: "/printable-interactieve-spelletjes" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
