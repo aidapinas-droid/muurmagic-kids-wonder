@@ -9,8 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PrintableInteractieveSpelletjesRouteImport } from './routes/printable-interactieve-spelletjes'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PrintableInteractieveSpelletjesRoute =
+  PrintableInteractieveSpelletjesRouteImport.update({
+    id: '/printable-interactieve-spelletjes',
+    path: '/printable-interactieve-spelletjes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +26,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/printable-interactieve-spelletjes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/printable-interactieve-spelletjes'
+  id: '__root__' | '/' | '/printable-interactieve-spelletjes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrintableInteractieveSpelletjesRoute: typeof PrintableInteractieveSpelletjesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/printable-interactieve-spelletjes': {
+      id: '/printable-interactieve-spelletjes'
+      path: '/printable-interactieve-spelletjes'
+      fullPath: '/printable-interactieve-spelletjes'
+      preLoaderRoute: typeof PrintableInteractieveSpelletjesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +71,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrintableInteractieveSpelletjesRoute: PrintableInteractieveSpelletjesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
