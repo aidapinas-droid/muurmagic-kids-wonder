@@ -10,7 +10,7 @@ import space from "@/assets/sticker-space.jpg";
 type Product = {
   id: string;
   name: string;
-  category: "Wall sticker" | "Party decor";
+  category: "Muursticker" | "Feestdecoratie";
   price: string;
   image: string;
   tag?: string;
@@ -18,15 +18,15 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: "1", name: "Bunny in Hot Air Balloon", category: "Wall sticker", price: "€34", image: balloon, tag: "Bestseller", bg: "bg-rose/30" },
-  { id: "2", name: "Magical Fairy Castle", category: "Wall sticker", price: "€42", image: castle, bg: "bg-primary/20" },
-  { id: "3", name: "Jungle Friends Trio", category: "Wall sticker", price: "€38", image: jungle, tag: "New", bg: "bg-mint/30" },
-  { id: "4", name: "Pastel Balloon Garland", category: "Party decor", price: "€24", image: balloons, bg: "bg-rose/30" },
-  { id: "5", name: "Dreamy Pastel Rainbow", category: "Wall sticker", price: "€36", image: rainbow, bg: "bg-mint/30" },
-  { id: "6", name: "Sleepy Moon & Stars", category: "Wall sticker", price: "€32", image: space, tag: "Limited", bg: "bg-primary/20" },
+  { id: "1", name: "Konijntje in luchtballon", category: "Muursticker", price: "€34", image: balloon, tag: "Bestseller", bg: "bg-rose/30" },
+  { id: "2", name: "Magisch sprookjeskasteel", category: "Muursticker", price: "€42", image: castle, bg: "bg-primary/20" },
+  { id: "3", name: "Jungle vriendjes trio", category: "Muursticker", price: "€38", image: jungle, tag: "Nieuw", bg: "bg-mint/30" },
+  { id: "4", name: "Pastel ballonnenslinger", category: "Feestdecoratie", price: "€24", image: balloons, bg: "bg-rose/30" },
+  { id: "5", name: "Dromerige pastelregenboog", category: "Muursticker", price: "€36", image: rainbow, bg: "bg-mint/30" },
+  { id: "6", name: "Slaperige maan & sterren", category: "Muursticker", price: "€32", image: space, tag: "Beperkt", bg: "bg-primary/20" },
 ];
 
-const filters = ["All", "Wall stickers", "Party decor", "Birthdays", "Playrooms"];
+const filters = ["Alles", "Muurstickers", "Feestdecoratie", "Verjaardagen", "Speelkamers"];
 
 export function ProductGrid() {
   return (
@@ -35,18 +35,18 @@ export function ProductGrid() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-xl">
             <p className="font-body text-sm font-bold uppercase tracking-widest text-primary">
-              Our collection
+              Onze collectie
             </p>
             <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-              Stickers that spark{" "}
+              Stickers die de{" "}
               <span className="bg-gradient-sunset bg-clip-text text-transparent">
-                imagination
+                fantasie
               </span>
             </h2>
           </div>
           <p className="max-w-md font-body text-base text-muted-foreground">
-            Hand-illustrated, removable, and printed on whisper-soft matte vinyl.
-            Built to last from the first nap to the tenth tea party.
+            Met de hand getekend, verwijderbaar en gedrukt op zachtmat vinyl.
+            Gemaakt om lang mee te gaan, van eerste dutje tot tiende theefeestje.
           </p>
         </div>
 
@@ -95,7 +95,7 @@ function ProductCard({ product }: { product: Product }) {
         )}
         <button
           className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-card/90 text-foreground shadow-soft backdrop-blur transition-colors hover:bg-rose hover:text-rose-foreground"
-          aria-label="Save to favourites"
+          aria-label="Bewaar als favoriet"
         >
           <Heart className="h-4 w-4" />
         </button>
@@ -116,7 +116,7 @@ function ProductCard({ product }: { product: Product }) {
         <Button
           size="icon"
           className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-magic text-primary-foreground shadow-soft hover:opacity-90"
-          aria-label={`Add ${product.name} to cart`}
+          aria-label={`${product.name} in winkelmand`}
         >
           <Plus className="h-5 w-5" />
         </Button>

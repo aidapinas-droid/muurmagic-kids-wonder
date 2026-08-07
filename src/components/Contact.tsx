@@ -13,7 +13,7 @@ export function Contact() {
     setSending(true);
     setTimeout(() => {
       setSending(false);
-      toast.success("Message sent! We'll be in touch within 1 working day. ✨");
+      toast.success("Bericht verstuurd! We reageren binnen 1 werkdag. ✨");
       (e.target as HTMLFormElement).reset();
     }, 700);
   }
@@ -24,14 +24,14 @@ export function Contact() {
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <p className="font-body text-sm font-bold uppercase tracking-widest text-primary">
-              Get in touch
+              Neem contact op
             </p>
             <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-              Let's make something magical together.
+              Samen maken we iets magisch.
             </h2>
             <p className="mt-4 font-body text-base text-muted-foreground">
-              Custom design for a nursery? A birthday backdrop with a name? Drop
-              us a line — we love a creative challenge.
+              Een ontwerp op maat voor de babykamer? Een verjaardagsdecor met naam?
+              Stuur ons een bericht — we houden van een creatieve uitdaging.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -46,20 +46,20 @@ export function Contact() {
             className="rounded-3xl border border-border/60 bg-card p-6 shadow-card sm:p-8 lg:col-span-3"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Your name">
-                <Input required name="name" placeholder="Sophie Rivers" className="h-12 rounded-xl border-border bg-muted/40 font-body" />
+              <Field label="Je naam">
+                <Input required name="name" placeholder="Sanne Jansen" className="h-12 rounded-xl border-border bg-muted/40 font-body" />
               </Field>
-              <Field label="Email">
-                <Input required type="email" name="email" placeholder="sophie@example.com" className="h-12 rounded-xl border-border bg-muted/40 font-body" />
+              <Field label="E-mailadres">
+                <Input required type="email" name="email" placeholder="sanne@voorbeeld.nl" className="h-12 rounded-xl border-border bg-muted/40 font-body" />
               </Field>
             </div>
             <div className="mt-4">
-              <Field label="What's on your mind?">
+              <Field label="Waar kunnen we mee helpen?">
                 <Textarea
                   required
                   name="message"
                   rows={5}
-                  placeholder="Tell us about the room or party you're dreaming up..."
+                  placeholder="Vertel over de kamer of het feest waar je van droomt..."
                   className="rounded-xl border-border bg-muted/40 font-body"
                 />
               </Field>
@@ -70,7 +70,7 @@ export function Contact() {
               size="lg"
               className="mt-6 h-14 w-full rounded-full bg-gradient-magic font-body text-base font-bold text-primary-foreground shadow-soft hover:opacity-90 sm:w-auto sm:px-10"
             >
-              {sending ? "Sending..." : "Send message"}
+              {sending ? "Versturen..." : "Verstuur bericht"}
               <Send className="ml-2 h-4 w-4" />
             </Button>
           </form>

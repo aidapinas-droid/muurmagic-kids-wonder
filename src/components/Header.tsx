@@ -8,8 +8,9 @@ type NavLink = { label: string; href: string; to?: string };
 
 const links: NavLink[] = [
   { label: "Shop", href: "#shop" },
+  { label: "Thema's", href: "/#themas" },
   { label: "Spelletjes", href: "/printable-interactieve-spelletjes", to: "/printable-interactieve-spelletjes" },
-  { label: "About", href: "#about" },
+  { label: "Over ons", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -49,7 +50,7 @@ export function Header() {
             className="hidden rounded-full bg-primary font-semibold text-primary-foreground shadow-soft hover:bg-primary/90 sm:inline-flex"
           >
             <ShoppingBag className="mr-2 h-4 w-4" />
-            Cart (0)
+            Winkelmand (0)
           </Button>
           <button
             type="button"
@@ -88,7 +89,7 @@ export function Header() {
             )}
             <Button className="mt-2 rounded-full bg-primary text-primary-foreground">
               <ShoppingBag className="mr-2 h-4 w-4" />
-              Cart (0)
+              Winkelmand (0)
             </Button>
           </nav>
         </div>
