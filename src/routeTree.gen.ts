@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PrivacybeleidRouteImport } from './routes/privacybeleid'
 import { Route as PrintableInteractieveSpelletjesRouteImport } from './routes/printable-interactieve-spelletjes'
+import { Route as MuurstickersArchiefRouteImport } from './routes/muurstickers-archief'
 import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThemaSlugRouteImport } from './routes/thema.$slug'
@@ -27,6 +28,11 @@ const PrintableInteractieveSpelletjesRoute =
     path: '/printable-interactieve-spelletjes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const MuurstickersArchiefRoute = MuurstickersArchiefRouteImport.update({
+  id: '/muurstickers-archief',
+  path: '/muurstickers-archief',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
   id: '/algemene-voorwaarden',
   path: '/algemene-voorwaarden',
@@ -51,6 +57,7 @@ const BoekSlugRoute = BoekSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/boek/$slug': typeof BoekSlugRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/boek/$slug': typeof BoekSlugRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
+  '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/boek/$slug': typeof BoekSlugRoute
@@ -78,6 +87,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/algemene-voorwaarden'
+    | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
     | '/boek/$slug'
@@ -86,6 +96,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/algemene-voorwaarden'
+    | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
     | '/boek/$slug'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/algemene-voorwaarden'
+    | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
     | '/boek/$slug'
@@ -103,6 +115,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
+  MuurstickersArchiefRoute: typeof MuurstickersArchiefRoute
   PrintableInteractieveSpelletjesRoute: typeof PrintableInteractieveSpelletjesRoute
   PrivacybeleidRoute: typeof PrivacybeleidRoute
   BoekSlugRoute: typeof BoekSlugRoute
@@ -123,6 +136,13 @@ declare module '@tanstack/react-router' {
       path: '/printable-interactieve-spelletjes'
       fullPath: '/printable-interactieve-spelletjes'
       preLoaderRoute: typeof PrintableInteractieveSpelletjesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/muurstickers-archief': {
+      id: '/muurstickers-archief'
+      path: '/muurstickers-archief'
+      fullPath: '/muurstickers-archief'
+      preLoaderRoute: typeof MuurstickersArchiefRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/algemene-voorwaarden': {
@@ -159,6 +179,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
+  MuurstickersArchiefRoute: MuurstickersArchiefRoute,
   PrintableInteractieveSpelletjesRoute: PrintableInteractieveSpelletjesRoute,
   PrivacybeleidRoute: PrivacybeleidRoute,
   BoekSlugRoute: BoekSlugRoute,

@@ -7,11 +7,10 @@ import { Button } from "@/components/ui/button";
 type NavLink = { label: string; href: string; to?: string };
 
 const links: NavLink[] = [
-  { label: "Shop", href: "#shop" },
   { label: "Thema's", href: "/#themas" },
   { label: "Spelletjes", href: "/printable-interactieve-spelletjes", to: "/printable-interactieve-spelletjes" },
-  { label: "Over ons", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Hoe werkt het", href: "/#hoe-werkt-het" },
+  { label: "Bestellen", href: "/#bestellen" },
 ];
 
 export function Header() {

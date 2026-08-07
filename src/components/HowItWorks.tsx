@@ -1,9 +1,9 @@
 const steps = [
-  { emoji: "🖨️", title: "Printen", text: "Print het speelboek thuis of bij een printshop." },
-  { emoji: "✂️", title: "Knippen", text: "Knip de onderdelen netjes uit langs de lijnen." },
-  { emoji: "📄", title: "Lamineren", text: "Lamineer alles zodat het jarenlang meegaat." },
-  { emoji: "🧷", title: "Velcro plakken", text: "Plak de klittenband op de plaatjes en pagina's." },
-  { emoji: "🎉", title: "Spelen", text: "Klaar! Spelen, verplaatsen en steeds opnieuw beginnen." },
+  { emoji: "🎨", title: "Kies een thema", text: "Blader door de bibliotheek en kies jouw favoriet." },
+  { emoji: "📥", title: "Download of bestel", text: "Direct downloaden of kant-en-klaar bestellen." },
+  { emoji: "🖨️", title: "Print", text: "Print thuis of bij een printshop." },
+  { emoji: "✂️", title: "Knip en lamineer", text: "Knip uit en lamineer zodat het jarenlang meegaat." },
+  { emoji: "🎉", title: "Spelen maar!", text: "Klaar! Spelen, verplaatsen en steeds opnieuw beginnen." },
 ];
 
 export function HowItWorks() {
@@ -12,11 +12,8 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-baloo text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Hoe werkt het?
+            Zo werkt het
           </h2>
-          <p className="mt-4 font-nunito text-base text-muted-foreground sm:text-lg">
-            In vijf simpele stappen van printbaar bestand naar echt speelgoed.
-          </p>
         </div>
 
         <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">

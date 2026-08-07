@@ -1,43 +1,66 @@
-import { Button } from "@/components/ui/button";
-import { MessageCircle, Mail } from "lucide-react";
 import { WHATSAPP_URL } from "@/data/library";
+
+const ways = [
+  {
+    emoji: "💬",
+    title: "WhatsApp",
+    text: "Stuur een bericht en we regelen je bestelling samen.",
+    href: WHATSAPP_URL,
+    cta: "Stuur een bericht",
+  },
+  {
+    emoji: "💳",
+    title: "Tikkie",
+    text: "Betaal eenvoudig met een Tikkie-betaalverzoek.",
+    href: null,
+    cta: null,
+  },
+  {
+    emoji: "🏠",
+    title: "Contant bij afhalen",
+    text: "Kom je langs? Dan kan contant betalen ook.",
+    href: null,
+    cta: null,
+  },
+];
 
 export function PersonalOrder() {
   return (
     <section id="persoonlijk-bestellen" className="bg-gradient-soft py-20 sm:py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[2rem] border border-border/60 bg-card p-8 text-center shadow-card sm:p-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-baloo text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
-            Persoonlijk bestellen
+            Liever persoonlijk bestellen?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-nunito text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Wil je een boek op maat, met een eigen naam of een speciaal thema?
-            Stuur ons een bericht — we denken graag met je mee.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="cta-mint-glow h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground"
-              style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {ways.map((w) => (
+            <article
+              key={w.title}
+              className="rounded-3xl border border-border/60 bg-card p-6 text-center shadow-card transition-transform duration-300 hover:-translate-y-2"
             >
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Stuur een WhatsApp
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-14 rounded-full border-2 border-foreground/15 bg-card px-8 font-nunito text-base font-bold text-foreground hover:bg-mint/20"
-            >
-              <a href="#contact">
-                <Mail className="mr-2 h-5 w-5" />
-                Naar het contactformulier
-              </a>
-            </Button>
-          </div>
+              <span className="text-4xl" aria-hidden="true">
+                {w.emoji}
+              </span>
+              <h3 className="mt-4 font-baloo text-xl font-extrabold text-foreground">
+                {w.title}
+              </h3>
+              <p className="mt-2 font-nunito text-sm leading-relaxed text-muted-foreground">
+                {w.text}
+              </p>
+              {w.href && (
+                <a
+                  href={w.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-block font-nunito text-sm font-bold text-primary hover:underline"
+                >
+                  {w.cta} →
+                </a>
+              )}
+            </article>
+          ))}
         </div>
       </div>
     </section>
