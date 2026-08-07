@@ -7,10 +7,10 @@ export function ThemeLibrary() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-baloo text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Ontdek de thema's
+            Kies jouw thema
           </h2>
           <p className="mt-4 font-nunito text-base text-muted-foreground sm:text-lg">
-            Kies een wereld en ontdek de bijbehorende interactieve speelboeken.
+            Kies een wereld — nieuwe speelboeken volgen binnenkort.
           </p>
         </div>
 

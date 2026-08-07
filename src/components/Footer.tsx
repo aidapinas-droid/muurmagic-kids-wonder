@@ -17,7 +17,7 @@ export function Footer() {
         <div className="sm:col-span-2">
           <Logo />
           <p className="mt-4 max-w-sm font-nunito text-sm text-muted-foreground">
-            Interactieve speelboeken, muurstickers en feestdecoratie voor de
+            Interactieve speelboeken, printables, DIY sets en busy bags voor de
             kleinste dromers en de grootste fantasie.
           </p>
           <p className="mt-3 font-baloo text-sm font-bold text-primary">
@@ -69,8 +69,8 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="/#contact" className="hover:text-primary">
-                Contact
+              <a href="/#persoonlijk-bestellen" className="hover:text-primary">
+                Persoonlijk bestellen
               </a>
             </li>
             <li>
