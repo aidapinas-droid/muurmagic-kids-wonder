@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Sparkle, Star } from "./Sparkle";
-import { ArrowRight, Wand2 } from "lucide-react";
-import heroRoom from "@/assets/hero-room.jpg";
 import muurmagicLogo from "@/assets/muurmagic-logo.png";
 
 export function Hero() {
@@ -19,22 +17,15 @@ export function Hero() {
       />
 
       {/* Sparkles */}
-      <Sparkle
-        className="absolute left-[12%] top-24 animate-twinkle text-primary"
-        size={28}
-      />
-      <Star
-        className="absolute right-[18%] top-40 animate-twinkle text-accent"
-        size={22}
-      />
+      <Sparkle className="absolute left-[12%] top-24 animate-twinkle text-primary" size={28} />
+      <Star className="absolute right-[18%] top-40 animate-twinkle text-accent" size={22} />
       <Sparkle
         className="absolute bottom-24 left-[8%] animate-twinkle text-mint"
         size={20}
         color="oklch(0.78 0.11 175)"
       />
 
-      {/* Centered logo block with glow, tagline & CTA */}
-      <div className="relative mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8 lg:pt-20">
+      <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-20 lg:pb-24">
         <div className="relative mx-auto flex flex-col items-center text-center">
           {/* Floating gold sparkles around the logo */}
           <GoldSparkle className="absolute left-[6%] top-4 animate-twinkle" size={14} />
@@ -75,189 +66,33 @@ export function Hero() {
             />
             <img
               src={muurmagicLogo}
-              alt="MuurMagic — Tover jouw muur in een wonderwereld"
+              alt="MuurMagic — interactieve speelboeken en printables"
               width={640}
               height={640}
               className="relative h-auto w-[280px] drop-shadow-xl sm:w-[380px] lg:w-[460px]"
             />
           </div>
 
-          <p className="mt-6 font-nunito text-2xl font-extrabold leading-tight tracking-wide text-primary sm:text-3xl lg:text-4xl">
-            Tover jouw muur in een wonderwereld
-          </p>
-          <p className="mt-3 font-nunito text-base font-medium tracking-[0.04em] text-muted-foreground sm:text-lg">
-            Print. Knip. Lamineer. Speel. Steeds opnieuw.
-          </p>
-
-          <Button
-            asChild
-            size="lg"
-            className="cta-mint-glow mt-8 h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground hover:scale-[1.03]"
-            style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
-          >
-            <a href="#shop">
-              <Wand2 className="mr-2 h-5 w-5" />
-              Start jouw muur magie
-            </a>
-          </Button>
-        </div>
-
-        {/* New magical headline block */}
-        <div className="relative mx-auto mt-20 max-w-4xl text-center sm:mt-24">
-          {/* Floating gold sparkles around the headline */}
-          <GoldSparkle
-            className="absolute -left-2 -top-4 animate-drift-sparkle sm:left-[6%] sm:-top-2"
-            size={18}
-          />
-          <GoldSparkle
-            className="absolute right-0 -top-6 animate-drift-sparkle sm:right-[8%]"
-            size={22}
-            style={{ animationDelay: "0.7s" }}
-          />
-          <GoldSparkle
-            className="absolute left-[10%] top-1/2 animate-drift-sparkle"
-            size={14}
-            style={{ animationDelay: "1.2s" }}
-          />
-          <GoldSparkle
-            className="absolute right-[6%] top-2/3 animate-drift-sparkle"
-            size={16}
-            style={{ animationDelay: "1.8s" }}
-          />
-          <GoldSparkle
-            className="absolute -left-1 bottom-10 animate-drift-sparkle sm:left-[14%]"
-            size={12}
-            style={{ animationDelay: "2.3s" }}
-          />
-          <GoldSparkle
-            className="absolute right-[18%] bottom-4 animate-drift-sparkle"
-            size={20}
-            style={{ animationDelay: "0.4s" }}
-          />
-
-          <h2 className="font-baloo text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
-            Waar kamers magie worden <br className="hidden sm:block" />
-            en feestjes tot leven komen
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl font-nunito text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
-            Interactieve speelboeken om te printen, lamineren en steeds opnieuw te spelen
-          </p>
-
-          <Button
-            asChild
-            size="lg"
-            className="cta-mint-glow mt-8 h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground hover:scale-[1.03]"
-            style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
-          >
-            <a href="#shop">
-              Bekijk de bibliotheek
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
-        </div>
-      </div>
-
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:py-24 lg:px-8">
-        <div className="relative z-10 text-center lg:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full bg-card/80 px-4 py-1.5 font-body text-xs font-bold uppercase tracking-widest text-primary shadow-soft backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-mint" />
-            Nieuwe thema's · Elke maand erbij
-          </span>
-
-          <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight text-foreground text-balance sm:text-6xl lg:text-7xl">
-            Tover jouw muur <br className="hidden sm:block" />
-            in{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-magic bg-clip-text text-transparent">
-                magie
-              </span>
-              <svg
-                className="absolute -bottom-2 left-0 h-3 w-full text-accent"
-                viewBox="0 0 200 12"
-                fill="none"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M2 8 Q 50 2, 100 6 T 198 4"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
-            </span>
-            .
+          <h1 className="mt-8 font-baloo text-4xl font-extrabold leading-[1.1] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
+            Maak van spelen een avontuur
           </h1>
 
-          <p className="mx-auto mt-6 max-w-lg font-body text-lg leading-relaxed text-muted-foreground lg:mx-0">
-            Verwijderbare muurstickers, feestdecoratie en interactieve speelboeken die
-            kinderkamers, speelkamers en verjaardagen veranderen in een wonderwereld.
+          <p className="mx-auto mt-5 max-w-2xl font-nunito text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
+            Interactieve speelboeken en printables voor peuters en kleuters.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-            <Button
-              asChild
-              size="lg"
-              className="h-14 rounded-full bg-primary px-8 font-body text-base font-bold text-primary-foreground shadow-magic transition-transform hover:scale-105 hover:bg-primary/90"
-            >
-              <a href="#shop">
-                Bekijk de shop
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-14 rounded-full border-2 border-foreground/15 bg-card px-8 font-body text-base font-bold text-foreground hover:bg-mint/20"
-            >
-              <a href="#about">Ons verhaal</a>
-            </Button>
-          </div>
-
-          <div className="mt-10 flex items-center justify-center gap-8 lg:justify-start">
-            <Stat value="2k+" label="Blije kamers" />
-            <Divider />
-            <Stat value="100%" label="Muurvriendelijk" />
-            <Divider />
-            <Stat value="48h" label="Gratis verzending" />
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-magic opacity-20 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border-4 border-card shadow-magic">
-            <img
-              src={heroRoom}
-              alt="Een vrolijke kinderkamer met een magische bosmuursticker"
-              width={1536}
-              height={1280}
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          {/* Floating tag */}
-          <div className="absolute -bottom-4 -left-4 flex animate-float-soft items-center gap-3 rounded-2xl bg-card px-4 py-3 shadow-card">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-mint text-mint-foreground">
-              <Sparkle size={20} />
-            </span>
-            <div className="text-left">
-              <p className="font-display text-sm font-bold leading-tight">
-                Simpel plakken
-              </p>
-              <p className="font-body text-xs text-muted-foreground">
-                Geen gereedschap nodig
-              </p>
-            </div>
-          </div>
-
-          <div
-            className="absolute -right-3 top-8 flex animate-float-soft items-center gap-2 rounded-full bg-accent px-4 py-2 font-display text-sm font-bold text-accent-foreground shadow-card"
-            style={{ animationDelay: "1.5s" }}
+          <Button
+            asChild
+            size="lg"
+            className="cta-mint-glow mt-8 h-14 rounded-full px-8 font-nunito text-base font-extrabold text-mint-foreground hover:scale-[1.03]"
+            style={{ backgroundColor: "oklch(0.78 0.11 175)" }}
           >
-            ✨ Gratis retour
-          </div>
+            <a href="#themas">📚 Bekijk de speelboeken</a>
+          </Button>
+
+          <p className="mt-5 font-nunito text-sm font-bold tracking-wide text-primary sm:text-base">
+            📱 Minder schermtijd. 🌈 Meer MuurMagic.
+          </p>
         </div>
       </div>
     </section>
@@ -290,17 +125,4 @@ function GoldSparkle({
       />
     </svg>
   );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="text-left">
-      <div className="font-display text-2xl font-black text-foreground">{value}</div>
-      <div className="font-body text-xs font-medium text-muted-foreground">{label}</div>
-    </div>
-  );
-}
-
-function Divider() {
-  return <div className="h-8 w-px bg-border" />;
 }
