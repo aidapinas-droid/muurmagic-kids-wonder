@@ -9,54 +9,127 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PrivacybeleidRouteImport } from './routes/privacybeleid'
 import { Route as PrintableInteractieveSpelletjesRouteImport } from './routes/printable-interactieve-spelletjes'
+import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThemaSlugRouteImport } from './routes/thema.$slug'
+import { Route as BoekSlugRouteImport } from './routes/boek.$slug'
 
+const PrivacybeleidRoute = PrivacybeleidRouteImport.update({
+  id: '/privacybeleid',
+  path: '/privacybeleid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrintableInteractieveSpelletjesRoute =
   PrintableInteractieveSpelletjesRouteImport.update({
     id: '/printable-interactieve-spelletjes',
     path: '/printable-interactieve-spelletjes',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
+  id: '/algemene-voorwaarden',
+  path: '/algemene-voorwaarden',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThemaSlugRoute = ThemaSlugRouteImport.update({
+  id: '/thema/$slug',
+  path: '/thema/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoekSlugRoute = BoekSlugRouteImport.update({
+  id: '/boek/$slug',
+  path: '/boek/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/boek/$slug': typeof BoekSlugRoute
+  '/thema/$slug': typeof ThemaSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/boek/$slug': typeof BoekSlugRoute
+  '/thema/$slug': typeof ThemaSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/boek/$slug': typeof BoekSlugRoute
+  '/thema/$slug': typeof ThemaSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/printable-interactieve-spelletjes'
+  fullPaths:
+    | '/'
+    | '/algemene-voorwaarden'
+    | '/printable-interactieve-spelletjes'
+    | '/privacybeleid'
+    | '/boek/$slug'
+    | '/thema/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/printable-interactieve-spelletjes'
-  id: '__root__' | '/' | '/printable-interactieve-spelletjes'
+  to:
+    | '/'
+    | '/algemene-voorwaarden'
+    | '/printable-interactieve-spelletjes'
+    | '/privacybeleid'
+    | '/boek/$slug'
+    | '/thema/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/algemene-voorwaarden'
+    | '/printable-interactieve-spelletjes'
+    | '/privacybeleid'
+    | '/boek/$slug'
+    | '/thema/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
   PrintableInteractieveSpelletjesRoute: typeof PrintableInteractieveSpelletjesRoute
+  PrivacybeleidRoute: typeof PrivacybeleidRoute
+  BoekSlugRoute: typeof BoekSlugRoute
+  ThemaSlugRoute: typeof ThemaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/privacybeleid': {
+      id: '/privacybeleid'
+      path: '/privacybeleid'
+      fullPath: '/privacybeleid'
+      preLoaderRoute: typeof PrivacybeleidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/printable-interactieve-spelletjes': {
       id: '/printable-interactieve-spelletjes'
       path: '/printable-interactieve-spelletjes'
       fullPath: '/printable-interactieve-spelletjes'
       preLoaderRoute: typeof PrintableInteractieveSpelletjesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/algemene-voorwaarden': {
+      id: '/algemene-voorwaarden'
+      path: '/algemene-voorwaarden'
+      fullPath: '/algemene-voorwaarden'
+      preLoaderRoute: typeof AlgemeneVoorwaardenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -66,22 +139,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thema/$slug': {
+      id: '/thema/$slug'
+      path: '/thema/$slug'
+      fullPath: '/thema/$slug'
+      preLoaderRoute: typeof ThemaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boek/$slug': {
+      id: '/boek/$slug'
+      path: '/boek/$slug'
+      fullPath: '/boek/$slug'
+      preLoaderRoute: typeof BoekSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
   PrintableInteractieveSpelletjesRoute: PrintableInteractieveSpelletjesRoute,
+  PrivacybeleidRoute: PrivacybeleidRoute,
+  BoekSlugRoute: BoekSlugRoute,
+  ThemaSlugRoute: ThemaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

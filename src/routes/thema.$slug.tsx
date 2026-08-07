@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { getTheme, booksByTheme, themes } from "@/data/library";
+import { getTheme, booksByTheme, themes, type Book } from "@/data/library";
 import { ProductLabelList } from "@/components/ProductLabel";
 
 export const Route = createFileRoute("/thema/$slug")({
@@ -59,7 +59,7 @@ function ThemePage() {
         <section className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {books.map((b) => (
+              {(books as Book[]).map((b) => (
                 <Link
                   key={b.slug}
                   to="/boek/$slug"
