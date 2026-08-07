@@ -4,20 +4,20 @@ import { Heart, Leaf, Wand2 } from "lucide-react";
 const values = [
   {
     icon: Wand2,
-    title: "Hand-drawn magic",
-    text: "Every design starts as a watercolour sketch by our small studio in the Netherlands.",
+    title: "Met de hand getekend",
+    text: "Elk ontwerp begint als aquarelschets in onze kleine studio in Nederland.",
     color: "bg-primary/15 text-primary",
   },
   {
     icon: Leaf,
-    title: "Wall-friendly",
-    text: "Eco-vinyl that peels off cleanly when it's time for the next adventure.",
+    title: "Muurvriendelijk",
+    text: "Eco-vinyl dat er netjes afgaat als het tijd is voor het volgende avontuur.",
     color: "bg-mint/30 text-mint-foreground",
   },
   {
     icon: Heart,
-    title: "Made with love",
-    text: "Tested by our own little ones — and their very honest reviews.",
+    title: "Met liefde gemaakt",
+    text: "Getest door onze eigen kinderen — en hun heel eerlijke meningen.",
     color: "bg-rose/40 text-rose-foreground",
   },
 ];
@@ -37,20 +37,20 @@ export function About() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <p className="font-body text-sm font-bold uppercase tracking-widest text-primary-foreground/70">
-            About MuurMagic
+            Over MuurMagic
           </p>
           <h2 className="mt-2 font-display text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-            Big dreams deserve big walls.
+            Grote dromen verdienen grote muren.
           </h2>
           <p className="mt-6 font-body text-lg leading-relaxed text-primary-foreground/90">
-            We started MuurMagic in a tiny attic studio when our own children
-            asked for a forest on their bedroom wall. One sketch became a
-            sticker, then a collection — and now we ship a little bit of
-            wonder to families all over Europe.
+            MuurMagic begon op een kleine zolderkamer, toen onze eigen kinderen om
+            een bos op hun slaapkamermuur vroegen. Eén schets werd een sticker,
+            daarna een collectie — en nu sturen we een beetje verwondering naar
+            gezinnen door heel Europa.
           </p>
           <p className="mt-4 font-body text-base leading-relaxed text-primary-foreground/80">
-            From birthday backdrops to playroom murals, every piece is designed
-            to be peeled, stuck, restuck, and loved for years.
+            Van verjaardagsdecor tot speelkamermuur: alles is gemaakt om te plakken,
+            opnieuw te plakken en jarenlang van te genieten.
           </p>
         </div>
 

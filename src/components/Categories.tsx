@@ -15,11 +15,11 @@ type Category = {
 const categories: Category[] = [
   {
     id: "wall-stickers",
-    title: "Wall Stickers",
-    price: "From €8",
+    title: "Muurstickers",
+    price: "Vanaf €8",
     description:
-      "Beautiful watercolour stickers for any wall. Peel, stick and transform your space in minutes.",
-    badge: "Most Popular",
+      "Mooie aquarelstickers voor elke muur. Plakken en je kamer is in een paar minuten omgetoverd.",
+    badge: "Meest populair",
     icon: Sticker,
     bg: "bg-rose/20",
     iconBg: "bg-rose/40 text-rose-foreground",
@@ -27,11 +27,11 @@ const categories: Category[] = [
   },
   {
     id: "small-standees",
-    title: "Small Standees",
-    price: "From €15",
+    title: "Kleine standees",
+    price: "Vanaf €15",
     description:
-      "Adorable standing decoration figures. Perfect for birthday tables, photo corners and playrooms.",
-    badge: "New",
+      "Schattige staande decoratiefiguren. Perfect voor de verjaardagstafel, fotohoek en speelkamer.",
+    badge: "Nieuw",
     icon: Baby,
     bg: "bg-mint/20",
     iconBg: "bg-mint/40 text-mint-foreground",
@@ -39,10 +39,10 @@ const categories: Category[] = [
   },
   {
     id: "large-standees",
-    title: "Large Standees",
-    price: "From €32",
+    title: "Grote standees",
+    price: "Vanaf €32",
     description:
-      "Life-size standing figures for schools, theatre, BSO, events and big birthday parties.",
+      "Levensgrote staande figuren voor scholen, theater, BSO, evenementen en grote verjaardagen.",
     badge: "Bestseller",
     icon: Users,
     bg: "bg-primary/15",
@@ -51,10 +51,10 @@ const categories: Category[] = [
   },
   {
     id: "party-sets",
-    title: "Party Sets",
-    price: "From €39",
+    title: "Feestsets",
+    price: "Vanaf €39",
     description:
-      "Complete decoration sets for a magical party setup. Easy, beautiful and ready to impress.",
+      "Complete decoratiesets voor een magisch feest. Makkelijk, mooi en meteen klaar.",
     badge: "Popular",
     icon: PartyPopper,
     bg: "bg-cream",
@@ -63,11 +63,11 @@ const categories: Category[] = [
   },
   {
     id: "custom-creations",
-    title: "Custom Creations",
-    price: "From €25",
+    title: "Op maat gemaakt",
+    price: "Vanaf €25",
     description:
-      "Personalised themes, names and sizes made just for your event or space.",
-    badge: "Made for you",
+      "Persoonlijke thema's, namen en maten, speciaal gemaakt voor jouw feest of kamer.",
+    badge: "Voor jou gemaakt",
     icon: Sparkles,
     bg: "bg-accent/25",
     iconBg: "bg-accent/50 text-accent-foreground",
@@ -81,17 +81,17 @@ export function Categories() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-body text-sm font-bold uppercase tracking-widest text-primary">
-            Explore by category
+            Ontdek per categorie
           </p>
           <h2 className="mt-2 font-baloo text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Magic for every{" "}
+            Magie voor elk{" "}
             <span className="bg-gradient-magic bg-clip-text text-transparent">
               moment
             </span>
           </h2>
           <p className="mt-4 font-nunito text-base text-muted-foreground sm:text-lg">
-            From tiny stickers to life-size standees — pick your favourite way
-            to bring a room or party to life.
+            Van kleine stickers tot levensgrote standees — kies hoe jij een kamer
+            of feest tot leven brengt.
           </p>
         </div>
 
