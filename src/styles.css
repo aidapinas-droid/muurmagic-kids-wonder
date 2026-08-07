@@ -172,10 +172,17 @@
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
+  .shadow-mint-glow {
+    box-shadow: 0 8px 24px -8px oklch(0.78 0.11 175 / 0.5);
+  }
+  .shadow-rose-glow {
+    box-shadow: 0 8px 24px -8px oklch(0.82 0.075 10 / 0.5);
+  }
   .text-balance {
     text-wrap: balance;
   }
 }
+
 
 /* Floating animation for sparkles */
 @keyframes float-slow {
