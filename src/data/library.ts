@@ -91,22 +91,44 @@ export type Book = {
 export const PAYHIP_URL = "https://payhip.com/muurmagic";
 export const WHATSAPP_URL = "https://wa.me/31000000000";
 
-/**
- * Placeholder-boeken: één per thema zodat het herbruikbare producttemplate
- * werkt voor 100+ boeken zonder layout-aanpassingen.
- */
-export const books: Book[] = themes.map((t, i) => ({
-  slug: `${t.slug}-speelboek`,
-  title: `${t.title} — interactief speelboek`,
-  themeSlug: t.slug,
-  labels: i === 0 ? ["populair"] : i === 1 ? ["nieuw"] : ["binnenkort"],
-  description:
-    "Productomschrijving volgt binnenkort. Dit interactieve speelboek wordt geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
-  age: "Leeftijdsaanbeveling volgt — richtlijn: 2 tot 6 jaar.",
+/** De drie vaste verkoopvarianten die bij elk product horen. */
+export type Variant = {
+  icon: string;
+  name: string;
+  price: string;
+  description: string;
+};
+
+export const VARIANTS: Variant[] = [
+  {
+    icon: "✂️",
+    name: "Zelf maken",
+    price: "€3,99",
+    description:
+      "Digitaal bestand. Zelf printen, knippen, lamineren en samenstellen.",
+  },
+  {
+    icon: "📕",
+    name: "Kant-en-klaar Mini Boek",
+    price: "€7,50",
+    description:
+      "Volledig gemaakt. Direct klaar om te spelen. Op bestelling — binnen 7 dagen.",
+  },
+  {
+    icon: "📚",
+    name: "Kant-en-klaar Groot Boek",
+    price: "€17,50",
+    description:
+      "Groot volledig afgewerkt interactief speelboek. Op bestelling — binnen 7 dagen.",
+  },
+];
+
+const DEFAULTS = {
+  age: "Richtlijn: 2 tot 6 jaar.",
   learn: [
-    "Beschrijving volgt",
-    "Beschrijving volgt",
-    "Beschrijving volgt",
+    "Herkennen en benoemen",
+    "Fijne motoriek door plakken en matchen",
+    "Taal en fantasie tijdens het spelen",
   ],
   contents: [
     "Printbare PDF",
@@ -115,7 +137,31 @@ export const books: Book[] = themes.map((t, i) => ({
     "Spelinstructies",
   ],
   payhipUrl: PAYHIP_URL,
+};
+
+/** Alleen bestaande producten. Nieuwe producten worden aangeleverd. */
+export const books: Book[] = [
+  "Bluey",
+  "Paw Patrol",
+  "Peppa Pig",
+  "Stitch",
+  "Zootopia",
+  "De Avonturen van het Kleine Varkentje & Vriendjes",
+].map((name) => ({
+  slug: name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, ""),
+  title: `${name} — interactief speelboek`,
+  themeSlug: "dieren",
+  labels: [],
+  description:
+    "Interactief speelboek met bekende vriendjes. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ...DEFAULTS,
 }));
+
 
 export function getBook(slug: string) {
   return books.find((b) => b.slug === slug);
