@@ -62,7 +62,7 @@ export const themes: Theme[] = [
   {
     slug: "voertuigen",
     emoji: "🚗",
-    title: "Voertuigen",
+    title: "Voertuigen & Avontuur",
     description: "Auto's, treinen en alles wat rijdt, vaart of vliegt.",
     bg: "bg-accent/25",
   },
