@@ -205,6 +205,21 @@ export const books: Book[] = [
     "games",
     "Interactief speelboek uit een speelse spelwereld. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    [
+      "Barbie Mode",
+      "Fashionista",
+      "LOL Surprise",
+      "Gabby's Poppenhuis",
+      "Papieren Poppenhuis",
+      "Meisjeshuis",
+      "Hello Kitty Café",
+      "Hello Kitty",
+      "Vriendinnen Kuromi, My Melody & Hello Kitty",
+    ],
+    "poppen-en-rollenspel",
+    "Interactief speelboek voor poppen, mode en rollenspel. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
 
