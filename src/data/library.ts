@@ -62,7 +62,7 @@ export const themes: Theme[] = [
   {
     slug: "voertuigen",
     emoji: "🚗",
-    title: "Voertuigen",
+    title: "Voertuigen & Avontuur",
     description: "Auto's, treinen en alles wat rijdt, vaart of vliegt.",
     bg: "bg-accent/25",
   },
@@ -234,6 +234,11 @@ export const books: Book[] = [
     ],
     "populaire-themas",
     "Een van de favoriete interactieve speelboeken van MuurMagic. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
+  ...makeBooks(
+    ["Raceauto's"],
+    "voertuigen",
+    "Interactief speelboek vol snelle raceauto's en avontuur. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
 ];
 
