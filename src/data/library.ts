@@ -139,28 +139,59 @@ const DEFAULTS = {
   payhipUrl: PAYHIP_URL,
 };
 
-/** Alleen bestaande producten. Nieuwe producten worden aangeleverd. */
-export const books: Book[] = [
-  "Bluey",
-  "Paw Patrol",
-  "Peppa Pig",
-  "Stitch",
-  "Zootopia",
-  "De Avonturen van het Kleine Varkentje & Vriendjes",
-].map((name) => ({
-  slug: name
+const slugify = (name: string) =>
+  name
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, ""),
-  title: `${name} — interactief speelboek`,
-  themeSlug: "dieren",
-  labels: [],
-  description:
+    .replace(/(^-|-$)/g, "");
+
+const makeBooks = (
+  names: string[],
+  themeSlug: string,
+  description: string,
+): Book[] =>
+  names.map((name) => ({
+    slug: slugify(name),
+    title: `${name} — interactief speelboek`,
+    themeSlug,
+    labels: [],
+    description,
+    ...DEFAULTS,
+  }));
+
+/** Alleen bestaande producten. Nieuwe producten worden aangeleverd. */
+export const books: Book[] = [
+  ...makeBooks(
+    [
+      "Bluey",
+      "Paw Patrol",
+      "Peppa Pig",
+      "Stitch",
+      "Zootopia",
+      "De Avonturen van het Kleine Varkentje & Vriendjes",
+    ],
+    "dieren",
     "Interactief speelboek met bekende vriendjes. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
-  ...DEFAULTS,
-}));
+  ),
+  ...makeBooks(
+    [
+      "Anna & Elsa Mini",
+      "Elsa & Anna",
+      "Prinsessen",
+      "Rapunzel",
+      "Vaiana / Moana",
+      "Wednesday",
+      "Wednesday & Enid",
+      "Harry Potter",
+      "Eenhoorn",
+    ],
+    "prinsessen-en-magie",
+    "Interactief speelboek vol kastelen, toverstaven en sprookjesachtige avonturen. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
+];
+
 
 
 export function getBook(slug: string) {
