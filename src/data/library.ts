@@ -69,7 +69,7 @@ export const themes: Theme[] = [
   {
     slug: "muziek",
     emoji: "🎵",
-    title: "Muziek",
+    title: "Muziek & Trends",
     description: "Ritme, instrumenten en klanken om spelenderwijs te ontdekken.",
     bg: "bg-mint/20",
   },
