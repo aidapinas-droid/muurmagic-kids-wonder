@@ -31,7 +31,7 @@ export const themes: Theme[] = [
   },
   {
     slug: "prinsessen-en-magie",
-    emoji: "👸",
+    emoji: "👑",
     title: "Prinsessen & Magie",
     description: "Kastelen, toverstaven en sprookjesachtige avonturen.",
     bg: "bg-primary/15",
