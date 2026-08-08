@@ -190,6 +190,21 @@ export const books: Book[] = [
     "prinsessen-en-magie",
     "Interactief speelboek vol kastelen, toverstaven en sprookjesachtige avonturen. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    [
+      "Roblox",
+      "Mini Roblox",
+      "Minecraft",
+      "Toca Boca Mini",
+      "Toca Boca Voetbalwereld",
+      "Zomer Toca Boca",
+      "Avatar Wereld",
+      "Super Mario Bros",
+      "Sprunkis",
+    ],
+    "games",
+    "Interactief speelboek uit een speelse spelwereld. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
 
