@@ -107,11 +107,41 @@ function BookPage() {
         </section>
 
         <section className="bg-background py-16 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center font-baloo text-3xl font-extrabold text-foreground sm:text-4xl">
+              Kies jouw variant
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {VARIANTS.map((v) => (
+                <article
+                  key={v.name}
+                  className="flex flex-col rounded-3xl border border-border/60 bg-card p-7 text-center shadow-card"
+                >
+                  <span className="text-5xl" aria-hidden="true">
+                    {v.icon}
+                  </span>
+                  <h3 className="mt-4 font-baloo text-xl font-extrabold text-foreground">
+                    {v.name}
+                  </h3>
+                  <p className="mt-1 font-nunito text-lg font-bold text-primary">
+                    {v.price}
+                  </p>
+                  <p className="mt-3 flex-1 font-nunito text-sm leading-relaxed text-muted-foreground">
+                    {v.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-background pb-16 sm:pb-20">
           <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
             <InfoCard title="Wat leert je kind?" items={book.learn} />
             <InfoCard title="Wat zit erin?" items={book.contents} />
           </div>
         </section>
+
 
         <section className="bg-gradient-soft py-16 sm:py-20">
           <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
