@@ -220,6 +220,21 @@ export const books: Book[] = [
     "poppen-en-rollenspel",
     "Interactief speelboek voor poppen, mode en rollenspel. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    [
+      "Bluey",
+      "Roblox",
+      "Minecraft",
+      "Paw Patrol",
+      "Stitch",
+      "Hello Kitty",
+      "Barbie",
+      "Toca Boca",
+      "Peppa Pig",
+    ],
+    "populaire-themas",
+    "Een van de favoriete interactieve speelboeken van MuurMagic. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
 
