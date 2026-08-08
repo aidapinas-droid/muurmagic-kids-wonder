@@ -235,6 +235,11 @@ export const books: Book[] = [
     "populaire-themas",
     "Een van de favoriete interactieve speelboeken van MuurMagic. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    ["Raceauto's"],
+    "voertuigen",
+    "Interactief speelboek vol snelle raceauto's en avontuur. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
 
