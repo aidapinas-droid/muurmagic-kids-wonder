@@ -240,6 +240,20 @@ export const books: Book[] = [
     "voertuigen",
     "Interactief speelboek vol snelle raceauto's en avontuur. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    [
+      "BTS",
+      "K-Pop",
+      "Mini K-Pop",
+      "K-Pop LEGO",
+      "K-Pop Pasen",
+      "Huntrix",
+      "Brainrot",
+      "Labubu",
+    ],
+    "muziek",
+    "Interactief speelboek vol muziek, trends en kleurrijke figuren. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
 
