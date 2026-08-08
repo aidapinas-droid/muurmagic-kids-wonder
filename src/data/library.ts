@@ -53,10 +53,12 @@ export const themes: Theme[] = [
   {
     slug: "dieren",
     emoji: "🐾",
-    title: "Dieren",
-    description: "Boerderij, jungle en huisdieren om te herkennen en benoemen.",
+    title: "Dieren & Vriendjes",
+    description:
+      "Bekende vriendjes uit favoriete series, klaar voor interactief speelplezier.",
     bg: "bg-cream",
   },
+
   {
     slug: "voertuigen",
     emoji: "🚗",
