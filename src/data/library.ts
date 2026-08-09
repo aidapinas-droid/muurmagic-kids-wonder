@@ -71,7 +71,9 @@ export const themes: Theme[] = [
     description:
       "Bekende vriendjes uit favoriete series, klaar voor interactief speelplezier.",
     bg: "bg-cream",
+    image: themaDieren.url,
   },
+
 
   {
     slug: "voertuigen",
