@@ -13,12 +13,20 @@ export const labelMeta: Record<ProductLabel, { emoji: string; text: string; clas
   beperkt: { emoji: "🎯", text: "Beperkt", className: "bg-primary text-primary-foreground" },
 };
 
+import themaPopulaire from "@/assets/thema-populaire.webp.asset.json";
+import themaPrinsessen from "@/assets/thema-prinsessen.webp.asset.json";
+import themaPoppen from "@/assets/thema-poppen.webp.asset.json";
+import themaGames from "@/assets/thema-games.png.asset.json";
+import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
+import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
+
 export type Theme = {
   slug: string;
   emoji: string;
   title: string;
   description: string;
   bg: string;
+  image?: string;
 };
 
 export const themes: Theme[] = [
@@ -28,6 +36,7 @@ export const themes: Theme[] = [
     title: "Populaire thema's",
     description: "De favorieten van kinderen en ouders, gebundeld op één plek.",
     bg: "bg-gradient-soft",
+    image: themaPopulaire.url,
   },
   {
     slug: "prinsessen-en-magie",
@@ -35,6 +44,7 @@ export const themes: Theme[] = [
     title: "Prinsessen & Magie",
     description: "Kastelen, toverstaven en sprookjesachtige avonturen.",
     bg: "bg-primary/15",
+    image: themaPrinsessen.url,
   },
   {
     slug: "poppen-en-rollenspel",
@@ -42,6 +52,7 @@ export const themes: Theme[] = [
     title: "Poppen & Rollenspel",
     description: "Aankleden, verzorgen en samen verhalen bedenken.",
     bg: "bg-rose/25",
+    image: themaPoppen.url,
   },
   {
     slug: "games",
@@ -49,6 +60,7 @@ export const themes: Theme[] = [
     title: "Games",
     description: "Speelse spelwerelden voor kleine ontdekkers.",
     bg: "bg-mint/25",
+    image: themaGames.url,
   },
   {
     slug: "dieren",
@@ -65,6 +77,7 @@ export const themes: Theme[] = [
     title: "Voertuigen & Avontuur",
     description: "Auto's, treinen en alles wat rijdt, vaart of vliegt.",
     bg: "bg-accent/25",
+    image: themaVoertuigen.url,
   },
   {
     slug: "muziek",
@@ -72,8 +85,10 @@ export const themes: Theme[] = [
     title: "Muziek & Trends",
     description: "Ritme, instrumenten en klanken om spelenderwijs te ontdekken.",
     bg: "bg-mint/20",
+    image: themaMuziek.url,
   },
 ];
+
 
 export type Book = {
   slug: string;
