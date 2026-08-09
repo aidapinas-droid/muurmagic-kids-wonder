@@ -19,6 +19,8 @@ import themaPoppen from "@/assets/thema-poppen.webp.asset.json";
 import themaGames from "@/assets/thema-games.png.asset.json";
 import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
 import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
+import themaDieren from "@/assets/dieren-vriendjes-mockup.png.asset.json";
+
 
 export type Theme = {
   slug: string;
