@@ -25,12 +25,22 @@ export function ThemeLibrary() {
                 t.bg
               }
             >
-              <span
-                className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-card text-3xl shadow-soft transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
-                aria-hidden="true"
-              >
-                {t.emoji}
-              </span>
+              {t.image ? (
+                <img
+                  src={t.image}
+                  alt={`${t.title} — interactieve speelboeken`}
+                  loading="lazy"
+                  className="w-full rounded-2xl object-contain shadow-soft transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              ) : (
+                <span
+                  className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-card text-3xl shadow-soft transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+                  aria-hidden="true"
+                >
+                  {t.emoji}
+                </span>
+              )}
+
               <h3 className="mt-6 font-baloo text-2xl font-extrabold text-foreground">
                 {t.title}
               </h3>
