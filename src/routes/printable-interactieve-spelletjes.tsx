@@ -20,22 +20,22 @@ export const Route = createFileRoute("/printable-interactieve-spelletjes")({
     meta: [
       {
         title:
-          "Printable & Interactieve Spelletjes — MuurMagic",
+          "Printable & Interactieve Spelletjes — MuurMagic — Interactieve speelboeken & printables voor kinderen",
       },
       {
         name: "description",
         content:
-          "Herbruikbare spelletjes en printbare activiteiten voor thuis, onderweg en in de klas. Warm, speels en kindvriendelijk ontworpen door MuurMagic.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       {
         property: "og:title",
         content:
-          "Printable & Interactieve Spelletjes — MuurMagic",
+          "Printable & Interactieve Spelletjes — MuurMagic — Interactieve speelboeken & printables voor kinderen",
       },
       {
         property: "og:description",
         content:
-          "Leren door spel — printbare PDF's, DIY sets en kant-en-klare Pak & Plak spelletjes.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
     ],
   }),

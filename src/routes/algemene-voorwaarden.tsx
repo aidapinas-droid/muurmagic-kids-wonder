@@ -5,16 +5,16 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/algemene-voorwaarden")({
   head: () => ({
     meta: [
-      { title: "Algemene voorwaarden — MuurMagic" },
+      { title: "Algemene voorwaarden — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         name: "description",
         content:
-          "De algemene voorwaarden voor bestellingen, levering en retour bij MuurMagic.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
-      { property: "og:title", content: "Algemene voorwaarden — MuurMagic" },
+      { property: "og:title", content: "Algemene voorwaarden — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         property: "og:description",
-        content: "Voorwaarden voor bestellingen, levering en retour bij MuurMagic.",
+        content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

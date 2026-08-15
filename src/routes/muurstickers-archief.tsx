@@ -12,17 +12,17 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/muurstickers-archief")({
   head: () => ({
     meta: [
-      { title: "Muurstickers archief — MuurMagic" },
+      { title: "Muurstickers archief — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         name: "description",
         content:
-          "Archiefpagina met de eerdere MuurMagic muurstickers, standees en feestdecoratie. Niet zichtbaar in de navigatie.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Muurstickers archief — MuurMagic" },
+      { property: "og:title", content: "Muurstickers archief — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         property: "og:description",
-        content: "Bewaarde collectie muurstickers, standees en feestsets van MuurMagic.",
+        content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
