@@ -14,13 +14,13 @@ export const Route = createFileRoute("/thema/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Thema niet gevonden — MuurMagic" },
+          { title: "Thema niet gevonden — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     const { theme } = loaderData;
-    const title = `${theme.title} — interactieve speelboeken | MuurMagic`;
+    const title = `${theme.title} — interactieve speelboeken | MuurMagic — Interactieve speelboeken & printables voor kinderen`;
     return {
       meta: [
         { title },
