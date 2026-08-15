@@ -44,6 +44,7 @@ function Index() {
         <Hero />
         <Welcome />
         <ThemeLibrary />
+        <BookCarousel />
         <OrderOptions />
         <HowItWorks />
         <WhyMuurMagic />
