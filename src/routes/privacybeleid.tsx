@@ -5,16 +5,16 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/privacybeleid")({
   head: () => ({
     meta: [
-      { title: "Privacybeleid — MuurMagic" },
+      { title: "Privacybeleid — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         name: "description",
         content:
-          "Lees hoe MuurMagic omgaat met jouw persoonsgegevens bij bestellingen en contact.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
-      { property: "og:title", content: "Privacybeleid — MuurMagic" },
+      { property: "og:title", content: "Privacybeleid — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         property: "og:description",
-        content: "Hoe MuurMagic omgaat met jouw persoonsgegevens.",
+        content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

@@ -14,20 +14,25 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MuurMagic | Interactieve speelboeken & printables voor kids" },
+      { title: "MuurMagic — Interactieve speelboeken & printables voor kinderen" },
       {
         name: "description",
         content:
-          "Ontdek interactieve speelboeken, printables, DIY sets en busy bags voor peuters en kleuters. Print, knip, lamineer en speel verder.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
+      },
+      {
+        name: "keywords",
+        content:
+          "interactieve speelboeken kinderen, printables kinderen, DIY speelsets, busy bags, educatief speelgoed, kinderfeestje decoratie, BSO activiteiten, speelboeken school",
       },
       {
         property: "og:title",
-        content: "MuurMagic | Interactieve speelboeken & printables voor kids",
+        content: "MuurMagic — Interactieve speelboeken & printables voor kinderen",
       },
       {
         property: "og:description",
         content:
-          "Ontdek interactieve speelboeken, printables, DIY sets en busy bags voor peuters en kleuters. Print, knip, lamineer en speel verder.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

@@ -16,13 +16,13 @@ export const Route = createFileRoute("/boek/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Boek niet gevonden — MuurMagic" },
+          { title: "Boek niet gevonden — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
     const { book } = loaderData;
-    const title = `${book.title} | MuurMagic`;
+    const title = `${book.title} | MuurMagic — Interactieve speelboeken & printables voor kinderen`;
     return {
       meta: [
         { title },
