@@ -14,20 +14,20 @@ import { Toaster } from "@/components/ui/sonner";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MuurMagic — Interactieve speelboeken & printables" },
+      { title: "MuurMagic | Interactieve speelboeken & printables voor kids" },
       {
         name: "description",
         content:
-          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables, DIY sets en busy bags voor peuters en kleuters.",
+          "Ontdek interactieve speelboeken, printables, DIY sets en busy bags voor peuters en kleuters. Print, knip, lamineer en speel verder.",
       },
       {
         property: "og:title",
-        content: "MuurMagic — Interactieve speelboeken & printables",
+        content: "MuurMagic | Interactieve speelboeken & printables voor kids",
       },
       {
         property: "og:description",
         content:
-          "Interactieve speelboeken om te printen, lamineren en steeds opnieuw te spelen.",
+          "Ontdek interactieve speelboeken, printables, DIY sets en busy bags voor peuters en kleuters. Print, knip, lamineer en speel verder.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
