@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Welcome } from "@/components/Welcome";
 import { ThemeLibrary } from "@/components/ThemeLibrary";
+import { BookCarousel } from "@/components/BookCarousel";
 import { OrderOptions } from "@/components/OrderOptions";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhyMuurMagic } from "@/components/WhyMuurMagic";
