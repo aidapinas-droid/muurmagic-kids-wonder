@@ -29,7 +29,7 @@ export const Route = createRootRoute({
   beforeLoad: async ({ location }) => {
     if (location.pathname === "/toegang") return;
     const { unlocked } = await checkUnlocked();
-    if (!unlocked) throw redirect({ to: "/toegang" });
+    if (!unlocked) throw redirect({ to: "/toegang", search: { sleutel: undefined } });
   },
   head: () => ({
     meta: [
