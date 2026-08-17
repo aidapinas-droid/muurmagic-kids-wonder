@@ -1,7 +1,6 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, redirect } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { checkUnlocked } from "@/lib/gate.functions";
 
 function NotFoundComponent() {
   return (
@@ -26,11 +25,6 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  beforeLoad: async ({ location }) => {
-    if (location.pathname === "/toegang") return;
-    const { unlocked } = await checkUnlocked();
-    if (!unlocked) throw redirect({ to: "/toegang" });
-  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },
