@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ToegangRouteImport } from './routes/toegang'
 import { Route as PrivacybeleidRouteImport } from './routes/privacybeleid'
 import { Route as PrintableInteractieveSpelletjesRouteImport } from './routes/printable-interactieve-spelletjes'
 import { Route as MuurstickersArchiefRouteImport } from './routes/muurstickers-archief'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThemaSlugRouteImport } from './routes/thema.$slug'
 import { Route as BoekSlugRouteImport } from './routes/boek.$slug'
 
+const ToegangRoute = ToegangRouteImport.update({
+  id: '/toegang',
+  path: '/toegang',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacybeleidRoute = PrivacybeleidRouteImport.update({
   id: '/privacybeleid',
   path: '/privacybeleid',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
+  '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
   '/thema/$slug': typeof ThemaSlugRoute
 }
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
+  '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
   '/thema/$slug': typeof ThemaSlugRoute
 }
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/muurstickers-archief': typeof MuurstickersArchiefRoute
   '/printable-interactieve-spelletjes': typeof PrintableInteractieveSpelletjesRoute
   '/privacybeleid': typeof PrivacybeleidRoute
+  '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
   '/thema/$slug': typeof ThemaSlugRoute
 }
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
+    | '/toegang'
     | '/boek/$slug'
     | '/thema/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
+    | '/toegang'
     | '/boek/$slug'
     | '/thema/$slug'
   id:
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/muurstickers-archief'
     | '/printable-interactieve-spelletjes'
     | '/privacybeleid'
+    | '/toegang'
     | '/boek/$slug'
     | '/thema/$slug'
   fileRoutesById: FileRoutesById
@@ -118,12 +130,20 @@ export interface RootRouteChildren {
   MuurstickersArchiefRoute: typeof MuurstickersArchiefRoute
   PrintableInteractieveSpelletjesRoute: typeof PrintableInteractieveSpelletjesRoute
   PrivacybeleidRoute: typeof PrivacybeleidRoute
+  ToegangRoute: typeof ToegangRoute
   BoekSlugRoute: typeof BoekSlugRoute
   ThemaSlugRoute: typeof ThemaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/toegang': {
+      id: '/toegang'
+      path: '/toegang'
+      fullPath: '/toegang'
+      preLoaderRoute: typeof ToegangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacybeleid': {
       id: '/privacybeleid'
       path: '/privacybeleid'
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   MuurstickersArchiefRoute: MuurstickersArchiefRoute,
   PrintableInteractieveSpelletjesRoute: PrintableInteractieveSpelletjesRoute,
   PrivacybeleidRoute: PrivacybeleidRoute,
+  ToegangRoute: ToegangRoute,
   BoekSlugRoute: BoekSlugRoute,
   ThemaSlugRoute: ThemaSlugRoute,
 }
