@@ -11,6 +11,7 @@ const links: NavLink[] = [
   { label: "Spelletjes", href: "/printable-interactieve-spelletjes", to: "/printable-interactieve-spelletjes" },
   { label: "Hoe werkt het", href: "/#hoe-werkt-het" },
   { label: "Bestellen", href: "/#bestellen" },
+  { label: "Creative Vault", href: "/studio/creative-vault", to: "/studio/creative-vault" },
 ];
 
 export function Header() {
