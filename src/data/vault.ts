@@ -1,7 +1,6 @@
 /**
  * Creative Vault data contract (owner-only Studio area).
- * EMPTY on purpose — replace `vaultResources` / `vaultThemes` / `vaultSources`
- * with the exact existing Creative Vault dataset. The UI reads only from here.
+ * Loaded from vault.json (converted from the original Creative Vault app, 763 items). The UI reads only from here.
  */
 export type VaultWorld = "party" | "kids-creative";
 export type VaultFormat = "Canva" | "PDF" | "JPG" | "PNG" | "PowerPoint" | "SVG" | "Other";
@@ -21,9 +20,17 @@ export type VaultResource = {
   driveUrl?: string;
   originalUrl?: string;
   thumbnail?: string;
+  kind?: string;
+  category?: string;
+  blurb?: string;
+  use?: string;
+  hidden?: boolean;
+  children?: string[];
 };
 
 export const VAULT_FORMATS: VaultFormat[] = ["Canva", "PDF", "JPG", "PNG", "PowerPoint", "SVG", "Other"];
-export const vaultSources: VaultSource[] = [];
-export const vaultThemes: VaultTheme[] = [];
-export const vaultResources: VaultResource[] = [];
+import vaultData from "./vault.json";
+const data = vaultData as unknown as { sources: VaultSource[]; themes: VaultTheme[]; resources: VaultResource[] };
+export const vaultSources: VaultSource[] = data.sources;
+export const vaultThemes: VaultTheme[] = data.themes;
+export const vaultResources: VaultResource[] = data.resources;

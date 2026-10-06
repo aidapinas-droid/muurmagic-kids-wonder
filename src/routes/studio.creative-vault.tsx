@@ -33,6 +33,7 @@ function CreativeVault() {
     const term = q.trim().toLowerCase();
     return vaultResources.filter((r) => {
       if (tab !== "all" && r.world !== tab) return false;
+      if (r.hidden && !q.trim()) return false;
       if (formats.length && !r.formats.some((f) => formats.includes(f))) return false;
       if (!term) return true;
       const theme = vaultThemes.find((t) => t.id === r.themeId);
@@ -42,6 +43,7 @@ function CreativeVault() {
       return hay.includes(term);
     });
   }, [tab, q, formats]);
+  const [limit, setLimit] = useState(60);
 
   const toggle = (f: VaultFormat) =>
     setFormats((cur) => (cur.includes(f) ? cur.filter((x) => x !== f) : [...cur, f]));
@@ -85,13 +87,15 @@ function CreativeVault() {
           </div>
         ) : (
           <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {results.map((r) => (
+            {results.slice(0, limit).map((r) => (
               <li key={r.id} className="rounded-2xl border border-border bg-card p-4 shadow-soft">
+                {r.thumbnail && <img src={r.thumbnail} alt="" loading="lazy" className="mb-3 aspect-video w-full rounded-xl object-cover" />}
                 <h3 className="font-baloo text-lg font-bold text-foreground">{r.title.nl}</h3>
                 <p className="font-nunito text-xs text-muted-foreground">
                   {r.formats.join(" · ")}
                   {r.sourceId && ` — ${vaultSources.find((s) => s.id === r.sourceId)?.name ?? ""}`}
                 </p>
+                {r.blurb && <p className="mt-1 font-nunito text-xs text-muted-foreground">{r.blurb}</p>}
                 <div className="mt-3 flex flex-wrap gap-2 font-nunito text-xs font-bold">
                   {r.canvaUrl && <a href={r.canvaUrl} target="_blank" rel="noreferrer" className="text-primary">Open in Canva</a>}
                   {r.driveUrl && <a href={r.driveUrl} target="_blank" rel="noreferrer" className="text-primary">Open in Drive</a>}
@@ -101,6 +105,12 @@ function CreativeVault() {
             ))}
           </ul>
         )}
+        {results.length > limit && (
+          <button onClick={() => setLimit((l) => l + 60)} className="mt-4 w-full rounded-full bg-muted px-4 py-3 font-nunito text-sm font-bold text-foreground">
+            Meer tonen ({results.length - limit})
+          </button>
+        )}
+        <p className="mt-4 text-center font-nunito text-xs text-muted-foreground">{results.length} resultaten · {vaultResources.length} items in totaal</p>
       </div>
     </main>
   );
