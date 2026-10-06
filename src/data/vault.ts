@@ -29,8 +29,8 @@ export type VaultResource = {
 };
 
 export const VAULT_FORMATS: VaultFormat[] = ["Canva", "PDF", "JPG", "PNG", "PowerPoint", "SVG", "Other"];
-import vaultData from "./vault.json";
-const data = vaultData as unknown as { sources: VaultSource[]; themes: VaultTheme[]; resources: VaultResource[] };
-export const vaultSources: VaultSource[] = data.sources;
-export const vaultThemes: VaultTheme[] = data.themes;
-export const vaultResources: VaultResource[] = data.resources;
+
+
+export const vaultSources: VaultSource[] = [];
+export const vaultThemes: VaultTheme[] = [];
+export const vaultResources: VaultResource[] = [];
