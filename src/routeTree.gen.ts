@@ -15,7 +15,9 @@ import { Route as PrintableInteractieveSpelletjesRouteImport } from './routes/pr
 import { Route as MuurstickersArchiefRouteImport } from './routes/muurstickers-archief'
 import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StudioIndexRouteImport } from './routes/studio.index'
 import { Route as ThemaSlugRouteImport } from './routes/thema.$slug'
+import { Route as StudioCreativeVaultRouteImport } from './routes/studio.creative-vault'
 import { Route as BoekSlugRouteImport } from './routes/boek.$slug'
 
 const ToegangRoute = ToegangRouteImport.update({
@@ -49,9 +51,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudioIndexRoute = StudioIndexRouteImport.update({
+  id: '/studio/',
+  path: '/studio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThemaSlugRoute = ThemaSlugRouteImport.update({
   id: '/thema/$slug',
   path: '/thema/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioCreativeVaultRoute = StudioCreativeVaultRouteImport.update({
+  id: '/studio/creative-vault',
+  path: '/studio/creative-vault',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BoekSlugRoute = BoekSlugRouteImport.update({
@@ -68,7 +80,9 @@ export interface FileRoutesByFullPath {
   '/privacybeleid': typeof PrivacybeleidRoute
   '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
+  '/studio/creative-vault': typeof StudioCreativeVaultRoute
   '/thema/$slug': typeof ThemaSlugRoute
+  '/studio/': typeof StudioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,7 +92,9 @@ export interface FileRoutesByTo {
   '/privacybeleid': typeof PrivacybeleidRoute
   '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
+  '/studio/creative-vault': typeof StudioCreativeVaultRoute
   '/thema/$slug': typeof ThemaSlugRoute
+  '/studio': typeof StudioIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,7 +105,9 @@ export interface FileRoutesById {
   '/privacybeleid': typeof PrivacybeleidRoute
   '/toegang': typeof ToegangRoute
   '/boek/$slug': typeof BoekSlugRoute
+  '/studio/creative-vault': typeof StudioCreativeVaultRoute
   '/thema/$slug': typeof ThemaSlugRoute
+  '/studio/': typeof StudioIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,7 +119,9 @@ export interface FileRouteTypes {
     | '/privacybeleid'
     | '/toegang'
     | '/boek/$slug'
+    | '/studio/creative-vault'
     | '/thema/$slug'
+    | '/studio/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,7 +131,9 @@ export interface FileRouteTypes {
     | '/privacybeleid'
     | '/toegang'
     | '/boek/$slug'
+    | '/studio/creative-vault'
     | '/thema/$slug'
+    | '/studio'
   id:
     | '__root__'
     | '/'
@@ -121,7 +143,9 @@ export interface FileRouteTypes {
     | '/privacybeleid'
     | '/toegang'
     | '/boek/$slug'
+    | '/studio/creative-vault'
     | '/thema/$slug'
+    | '/studio/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,7 +156,9 @@ export interface RootRouteChildren {
   PrivacybeleidRoute: typeof PrivacybeleidRoute
   ToegangRoute: typeof ToegangRoute
   BoekSlugRoute: typeof BoekSlugRoute
+  StudioCreativeVaultRoute: typeof StudioCreativeVaultRoute
   ThemaSlugRoute: typeof ThemaSlugRoute
+  StudioIndexRoute: typeof StudioIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -179,11 +205,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/studio/': {
+      id: '/studio/'
+      path: '/studio'
+      fullPath: '/studio/'
+      preLoaderRoute: typeof StudioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thema/$slug': {
       id: '/thema/$slug'
       path: '/thema/$slug'
       fullPath: '/thema/$slug'
       preLoaderRoute: typeof ThemaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/creative-vault': {
+      id: '/studio/creative-vault'
+      path: '/studio/creative-vault'
+      fullPath: '/studio/creative-vault'
+      preLoaderRoute: typeof StudioCreativeVaultRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/boek/$slug': {
@@ -204,7 +244,9 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacybeleidRoute: PrivacybeleidRoute,
   ToegangRoute: ToegangRoute,
   BoekSlugRoute: BoekSlugRoute,
+  StudioCreativeVaultRoute: StudioCreativeVaultRoute,
   ThemaSlugRoute: ThemaSlugRoute,
+  StudioIndexRoute: StudioIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
