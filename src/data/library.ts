@@ -20,7 +20,6 @@ import themaGames from "@/assets/thema-games.png.asset.json";
 import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
 import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
 import themaDieren from "@/assets/dieren-vriendjes-mockup.png.asset.json";
-import coverAvatar from "@/assets/avatar-world-placeholder.png.asset.json";
 import coverHuntrix from "@/assets/huntrix-2-placeholder.png.asset.json";
 import coverCapybara from "@/assets/capybara-house-placeholder.png.asset.json";
 import coverEerste from "@/assets/mijn-eerste-interactieve-boek-placeholder.png.asset.json";
@@ -339,7 +338,6 @@ export const books: Book[] = [
 
 /** Tijdelijke covers per product-slug. */
 const bookImages: Record<string, string> = {
-  "avatar-wereld": coverAvatar.url,
   huntrix: coverHuntrix.url,
   "capybara-house": coverCapybara.url,
   "mijn-eerste-interactieve-boek": coverEerste.url,
