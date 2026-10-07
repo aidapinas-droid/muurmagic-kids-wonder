@@ -1,9 +1,9 @@
 # Final assortment content and audit
 
 ## Product experience
-- [ ] Set every product age and existing customer-facing book age claim to 4–8 years.
-- [ ] Extend product pages with useful concept, version, preparation/reuse and FAQ sections without invented product-specific facts.
-- [ ] Browser-check all product ages and category links plus representative long pages and FAQ at 1280 and 390 widths; preserve existing missing covers and do not publish.
+- [x] Set every product age and existing customer-facing book age claim to 4–8 years, including printables and existing search/share descriptions.
+- [x] Extend product pages with concept, unchanged three versions/prices, preparation, 7-day production timing, supported reuse and collapsible FAQ; preserve the activity-set distinction and do not invent contents.
+- [x] Browser-check 55 category entries and actual card clicks at both 1280 and 390 widths: all ages correct, 52/55 covers, zero broken links/images, overflow or future promises. Six representative long pages checked; 40 FAQ open/close checks per width passed, no runtime errors. No publishing.
 
 - [x] Set homepage copy exactly to “Kies een wereld” and remove missing-cover promises and the unused coming-soon badge while preserving layout.
 - [x] Remove other customer-facing coming-soon messaging, including the printable photo banner and legal-page placeholder promises.
