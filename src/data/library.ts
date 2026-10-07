@@ -20,7 +20,6 @@ import themaGames from "@/assets/thema-games.png.asset.json";
 import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
 import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
 import themaDieren from "@/assets/dieren-vriendjes-mockup.png.asset.json";
-import coverAvatar from "@/assets/avatar-world-placeholder.png.asset.json";
 import coverHuntrix from "@/assets/huntrix-2-placeholder.png.asset.json";
 import coverCapybara from "@/assets/capybara-house-placeholder.png.asset.json";
 import coverEerste from "@/assets/mijn-eerste-interactieve-boek-placeholder.png.asset.json";
@@ -40,6 +39,15 @@ import coverPm5 from "@/assets/rapunzel-placeholder.jpg.asset.json";
 import coverPm6 from "@/assets/vaiana-moana-placeholder.jpg.asset.json";
 import coverPm7 from "@/assets/wednesday-enid-placeholder.jpg.asset.json";
 import coverPm8 from "@/assets/wednesday-placeholder.jpg.asset.json";
+import coverG0 from "@/assets/games-avatar-wereld-placeholder.png.asset.json";
+import coverG1 from "@/assets/games-minecraft-placeholder.jpg.asset.json";
+import coverG2 from "@/assets/games-mini-roblox-placeholder.jpg.asset.json";
+import coverG3 from "@/assets/games-roblox-placeholder.jpg.asset.json";
+import coverG4 from "@/assets/games-sprunkis-placeholder.jpg.asset.json";
+import coverG5 from "@/assets/games-super-mario-bros-placeholder.jpg.asset.json";
+import coverG6 from "@/assets/games-toca-boca-mini-placeholder.png.asset.json";
+import coverG7 from "@/assets/games-toca-boca-voetbalwereld-placeholder.png.asset.json";
+import coverG8 from "@/assets/games-zomer-toca-boca-placeholder.png.asset.json";
 
 
 export type Theme = {
@@ -330,7 +338,6 @@ export const books: Book[] = [
 
 /** Tijdelijke covers per product-slug. */
 const bookImages: Record<string, string> = {
-  "avatar-wereld": coverAvatar.url,
   huntrix: coverHuntrix.url,
   "capybara-house": coverCapybara.url,
   "mijn-eerste-interactieve-boek": coverEerste.url,
@@ -350,6 +357,15 @@ const bookImages: Record<string, string> = {
   "vaiana-moana": coverPm6.url,
   "wednesday-enid": coverPm7.url,
   "wednesday": coverPm8.url,
+  "avatar-wereld": coverG0.url,
+  minecraft: coverG1.url,
+  "mini-roblox": coverG2.url,
+  roblox: coverG3.url,
+  sprunkis: coverG4.url,
+  "super-mario-bros": coverG5.url,
+  "toca-boca-mini": coverG6.url,
+  "toca-boca-voetbalwereld": coverG7.url,
+  "zomer-toca-boca": coverG8.url,
 };
 for (const b of books) {
   if (bookImages[b.slug]) b.image = bookImages[b.slug];
