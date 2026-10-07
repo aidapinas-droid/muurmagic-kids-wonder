@@ -34,7 +34,7 @@ function ToegangPage() {
     setLoading(false);
     if (res.ok) {
       await router.invalidate();
-      await router.navigate({ to: "/" });
+      await router.navigate({ to: "/studio/creative-vault" });
     } else {
       setError(true);
     }

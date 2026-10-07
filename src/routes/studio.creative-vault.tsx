@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 // Original Creative Vault app (built by Grok), embedded unchanged: data (763 records),
 // search logic, multilingual terms, categories, hierarchy, links and previews.
-import vaultHtml from "@/data/creative-vault.html?raw";
+import { getVaultHtml } from "@/lib/vault.functions";
 
 export const Route = createFileRoute("/studio/creative-vault")({
   head: () => ({
@@ -15,10 +15,12 @@ export const Route = createFileRoute("/studio/creative-vault")({
       { name: "twitter:card", content: "summary" },
     ],
   }),
+  loader: () => getVaultHtml(),
   component: CreativeVault,
 });
 
 function CreativeVault() {
+  const { html: vaultHtml } = Route.useLoaderData();
   return (
     <main className="flex h-dvh flex-col bg-background">
       <div className="px-4 py-2">
