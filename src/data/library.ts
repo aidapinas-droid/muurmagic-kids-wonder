@@ -288,6 +288,28 @@ export const books: Book[] = [
     "populaire-themas",
     "Een van de favoriete interactieve speelboeken van MuurMagic. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  {
+    ...DEFAULTS,
+    slug: "lalafanfan-eend",
+    title: "Lalafanfan Eend",
+    themeSlug: "dieren",
+    labels: [],
+    description: "Lalafanfan Eend uit het bestaande assortiment (PATO LALAFANFAN).",
+    age: "Leeftijdsadvies nog niet beschikbaar.",
+    learn: [],
+    contents: [],
+  },
+  {
+    ...DEFAULTS,
+    slug: "bluey-huis-activiteiten",
+    title: "Bluey Huis-activiteiten",
+    themeSlug: "dieren",
+    labels: [],
+    description: "Een activiteitenset van 4 pagina's rond het huis van Bluey (Fichas casita de Bluey). Geen volledig speelboek.",
+    age: "Leeftijdsadvies nog niet beschikbaar.",
+    learn: [],
+    contents: ["Activiteitenset van 4 pagina's"],
+  },
 ];
 
 /** Tijdelijke covers per product-slug. */
