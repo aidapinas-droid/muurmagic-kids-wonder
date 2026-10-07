@@ -20,7 +20,6 @@ import themaGames from "@/assets/thema-games.png.asset.json";
 import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
 import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
 import themaDieren from "@/assets/dieren-vriendjes-mockup.png.asset.json";
-import coverHuntrix from "@/assets/huntrix-2-placeholder.png.asset.json";
 import coverCapybara from "@/assets/capybara-house-placeholder.png.asset.json";
 import coverEerste from "@/assets/mijn-eerste-interactieve-boek-placeholder.png.asset.json";
 import coverBluey from "@/assets/bluey-placeholder.jpg.asset.json";
@@ -58,6 +57,14 @@ import coverPr5 from "@/assets/poppen-meisjeshuis-placeholder.png.asset.json";
 import coverPr6 from "@/assets/poppen-hello-kitty-cafe-placeholder.jpg.asset.json";
 import coverPr7 from "@/assets/poppen-hello-kitty-placeholder.jpg.asset.json";
 import coverPr8 from "@/assets/poppen-vriendinnen-kuromi-my-melody-hello-kitty-placeholder.jpg.asset.json";
+import coverM0 from "@/assets/muziek-bts-placeholder.png.asset.json";
+import coverM1 from "@/assets/muziek-kpop-placeholder.jpg.asset.json";
+import coverM2 from "@/assets/muziek-mini-kpop-placeholder.jpg.asset.json";
+import coverM3 from "@/assets/muziek-kpop-lego-placeholder.jpg.asset.json";
+import coverM4 from "@/assets/muziek-kpop-pasen-placeholder.png.asset.json";
+import coverM5 from "@/assets/muziek-huntrix-placeholder.png.asset.json";
+import coverM6 from "@/assets/muziek-brainrot-placeholder.jpg.asset.json";
+import coverM7 from "@/assets/muziek-labubu-placeholder.jpg.asset.json";
 
 export type Theme = {
   slug: string;
@@ -347,7 +354,14 @@ export const books: Book[] = [
 
 /** Tijdelijke covers per product-slug. */
 const bookImages: Record<string, string> = {
-  huntrix: coverHuntrix.url,
+  huntrix: coverM5.url,
+  bts: coverM0.url,
+  "k-pop": coverM1.url,
+  "mini-k-pop": coverM2.url,
+  "k-pop-lego": coverM3.url,
+  "k-pop-pasen": coverM4.url,
+  brainrot: coverM6.url,
+  labubu: coverM7.url,
   "capybara-house": coverCapybara.url,
   "mijn-eerste-interactieve-boek": coverEerste.url,
   bluey: coverBluey.url,
