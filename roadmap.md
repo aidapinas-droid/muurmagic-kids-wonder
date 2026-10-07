@@ -1,6 +1,7 @@
-# Dieren & Vriendjes cover fill
+# Final assortment content and audit
 
-- [x] Inspect existing source uploads for all seven covers: none are accessible.
-- [x] Add only confirmed missing Lalafanfan Eend and Bluey Huis-activiteiten records with unchanged global variants.
-- [ ] Attach supplied source covers — blocked on unavailable bluey-placeholder.jpg, paw-patrol-placeholder.jpg, peppa-pig-placeholder.jpg, stitch-placeholder.png, zootopia-placeholder.png, lalafanfan-eend-placeholder.jpg, bluey-huis-activiteiten-placeholder.png. No substitutions made.
-- [x] Verify all nine category cards and product pages on desktop and mobile; Capybara image renders, prices and password protection are unchanged, zero browser runtime errors. Existing Varkentje record remains unchanged.
+- [x] Remove homepage and missing-cover future promises while preserving layout.
+- [ ] Remove other customer-facing coming-soon messaging.
+- [ ] Inspect supplied sources for exact Barbie, Toca Boca and Varkentje covers; attach only exact supplied matches.
+- [ ] Browser-test all 7 categories and 55 entries, card clicks and detail covers at 1280 and 390 widths.
+- [ ] Confirm no future promises, broken links, broken images or horizontal overflow; report missing covers without substitutions.
