@@ -49,6 +49,15 @@ import coverG6 from "@/assets/games-toca-boca-mini-placeholder.png.asset.json";
 import coverG7 from "@/assets/games-toca-boca-voetbalwereld-placeholder.png.asset.json";
 import coverG8 from "@/assets/games-zomer-toca-boca-placeholder.png.asset.json";
 
+import coverPr0 from "@/assets/poppen-barbie-mode-placeholder.jpg.asset.json";
+import coverPr1 from "@/assets/poppen-fashionista-placeholder.jpg.asset.json";
+import coverPr2 from "@/assets/poppen-lol-surprise-placeholder.jpg.asset.json";
+import coverPr3 from "@/assets/poppen-gabbys-poppenhuis-placeholder.jpg.asset.json";
+import coverPr4 from "@/assets/poppen-papieren-poppenhuis-placeholder.jpg.asset.json";
+import coverPr5 from "@/assets/poppen-meisjeshuis-placeholder.png.asset.json";
+import coverPr6 from "@/assets/poppen-hello-kitty-cafe-placeholder.jpg.asset.json";
+import coverPr7 from "@/assets/poppen-hello-kitty-placeholder.jpg.asset.json";
+import coverPr8 from "@/assets/poppen-vriendinnen-kuromi-my-melody-hello-kitty-placeholder.jpg.asset.json";
 
 export type Theme = {
   slug: string;
@@ -366,6 +375,15 @@ const bookImages: Record<string, string> = {
   "toca-boca-mini": coverG6.url,
   "toca-boca-voetbalwereld": coverG7.url,
   "zomer-toca-boca": coverG8.url,
+  "barbie-mode": coverPr0.url,
+  "fashionista": coverPr1.url,
+  "lol-surprise": coverPr2.url,
+  "gabby-s-poppenhuis": coverPr3.url,
+  "papieren-poppenhuis": coverPr4.url,
+  "meisjeshuis": coverPr5.url,
+  "hello-kitty-cafe": coverPr6.url,
+  "hello-kitty": coverPr7.url,
+  "vriendinnen-kuromi-my-melody-hello-kitty": coverPr8.url,
 };
 for (const b of books) {
   if (bookImages[b.slug]) b.image = bookImages[b.slug];
