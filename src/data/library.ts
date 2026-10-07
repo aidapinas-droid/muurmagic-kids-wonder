@@ -65,6 +65,7 @@ import coverM4 from "@/assets/muziek-kpop-pasen-placeholder.png.asset.json";
 import coverM5 from "@/assets/muziek-huntrix-placeholder.png.asset.json";
 import coverM6 from "@/assets/muziek-brainrot-placeholder.jpg.asset.json";
 import coverM7 from "@/assets/muziek-labubu-placeholder.jpg.asset.json";
+import coverV0 from "@/assets/voertuigen-raceautos-placeholder.jpg.asset.json";
 
 export type Theme = {
   slug: string;
@@ -355,6 +356,7 @@ export const books: Book[] = [
 /** Tijdelijke covers per product-slug. */
 const bookImages: Record<string, string> = {
   huntrix: coverM5.url,
+  "raceauto-s": coverV0.url,
   bts: coverM0.url,
   "k-pop": coverM1.url,
   "mini-k-pop": coverM2.url,
