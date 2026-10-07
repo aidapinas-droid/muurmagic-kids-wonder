@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       {
         name: "keywords",
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

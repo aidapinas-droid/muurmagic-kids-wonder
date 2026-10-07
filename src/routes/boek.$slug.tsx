@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { getBook, getTheme, WHATSAPP_URL, VARIANTS } from "@/data/library";
 import { ProductLabelList } from "@/components/ProductLabel";
+import { ProductConcept, ProductPreparation, ProductFaq } from "@/components/ProductGuide";
 import { ShoppingBag, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/boek/$slug")({
@@ -31,6 +32,10 @@ export const Route = createFileRoute("/boek/$slug")({
         { property: "og:description", content: book.description },
         { property: "og:type", content: "product" },
         { name: "twitter:card", content: "summary" },
+        ...(book.image?.startsWith("https://") ? [
+          { property: "og:image", content: book.image },
+          { name: "twitter:image", content: book.image },
+        ] : []),
       ],
     };
   },
@@ -39,6 +44,7 @@ export const Route = createFileRoute("/boek/$slug")({
 
 function BookPage() {
   const { book, theme } = Route.useLoaderData();
+  const reusable = book.description.includes("gelamineerd") && book.description.includes("velcro");
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,16 +82,11 @@ function BookPage() {
                 {book.description}
               </p>
 
-              <div className="mt-6 rounded-2xl border border-border/60 bg-card p-5">
-                <h2 className="font-baloo text-lg font-extrabold text-foreground">
-                  Leeftijd
-                </h2>
-                <p className="mt-1 font-nunito text-sm text-muted-foreground">
-                  {book.age}
-                </p>
-              </div>
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-mint bg-mint/25 px-5 py-3 font-nunito font-extrabold text-mint-foreground">
+                <span aria-hidden="true">✨</span> {book.age}
+              </p>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Button
                   asChild
                   size="lg"
@@ -112,10 +113,12 @@ function BookPage() {
           </div>
         </section>
 
+        <ProductConcept activitySet={book.slug === "bluey-huis-activiteiten"} />
+
         <section className="bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-center font-baloo text-3xl font-extrabold text-foreground sm:text-4xl">
-              Kies jouw variant
+              Kies jouw versie
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {VARIANTS.map((v) => (
@@ -141,24 +144,16 @@ function BookPage() {
           </div>
         </section>
 
-        <section className="bg-background pb-16 sm:pb-20">
+        {(book.learn.length > 0 || book.contents.length > 0) && <section className="bg-background pb-16 sm:pb-20">
           <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-            <InfoCard title="Wat leert je kind?" items={book.learn} />
-            <InfoCard title="Wat zit erin?" items={book.contents} />
+            {book.learn.length > 0 && <InfoCard title="Wat leert je kind?" items={book.learn} />}
+            {book.contents.length > 0 && <InfoCard title="Wat zit erin?" items={book.contents} />}
           </div>
-        </section>
+        </section>}
 
 
-        <section className="bg-gradient-soft py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 className="font-baloo text-3xl font-extrabold text-foreground sm:text-4xl">
-              Zo maak je het speelklaar
-            </h2>
-            <p className="mt-4 font-nunito text-base text-muted-foreground">
-              Print. Knip. Lamineer. Plak de velcro. Spelen — steeds opnieuw.
-            </p>
-          </div>
-        </section>
+        <ProductPreparation reusable={reusable} />
+        <ProductFaq reusable={reusable} />
       </main>
       <Footer />
     </div>

@@ -25,7 +25,7 @@ export const Route = createFileRoute("/printable-interactieve-spelletjes")({
       {
         name: "description",
         content:
-          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       {
         property: "og:title",
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/printable-interactieve-spelletjes")({
       {
         property: "og:description",
         content:
-          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
+          "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -243,7 +243,7 @@ function PrintablePage() {
                       Bestseller
                     </span>
                     <span className="rounded-full bg-mint px-3 py-1 font-nunito text-xs font-bold text-mint-foreground shadow-soft">
-                      Leeftijd 3+
+                      4–8 jaar
                     </span>
                     <span className="rounded-full bg-primary px-3 py-1 font-nunito text-xs font-bold text-primary-foreground shadow-soft">
                       Herbruikbaar
@@ -256,7 +256,7 @@ function PrintablePage() {
                     Een gelamineerd mini boekje met losse velcro figuurtjes.
                     Kinderen pakken een figuurtje, herkennen de kleur en plakken
                     het op de juiste plek. Herbruikbaar met whiteboard stift.
-                    Leeftijd 3+. Ideaal voor onderweg!
+                    4–8 jaar. Ideaal voor onderweg!
                   </p>
 
                   <div className="mt-6">
@@ -424,7 +424,7 @@ const products: Product[] = [
       { emoji: "🟠", name: "Oranje" },
       { emoji: "🌸", name: "Roze" },
     ],
-    eduBadges: ["Kleuren leren", "Fijne motoriek", "Leeftijd 3+", "Herbruikbaar"],
+    eduBadges: ["Kleuren leren", "Fijne motoriek", "4–8 jaar", "Herbruikbaar"],
     variants: [
       {
         id: "pdf",
@@ -473,7 +473,7 @@ const products: Product[] = [
     eduBadges: [
       "Alfabet leren",
       "Schrijven oefenen",
-      "Leeftijd 3+",
+      "4–8 jaar",
       "Wisbaar & herbruikbaar",
       "Ideaal voor onderweg",
     ],
@@ -524,7 +524,7 @@ const products: Product[] = [
     eduBadges: [
       "Leren door spelen",
       "Fantasie & creativiteit",
-      "Leeftijd 3+",
+      "4–8 jaar",
       "Herbruikbaar",
     ],
     variants: [

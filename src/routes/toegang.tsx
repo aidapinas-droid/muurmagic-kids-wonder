@@ -11,10 +11,10 @@ export const Route = createFileRoute("/toegang")({
   head: () => ({
     meta: [
       { title: "Toegang — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
-      { name: "description", content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes." },
+      { name: "description", content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes." },
       { name: "robots", content: "noindex" },
       { property: "og:title", content: "Toegang — MuurMagic — Interactieve speelboeken & printables voor kinderen" },
-      { property: "og:description", content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes." },
+      { property: "og:description", content: "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 4 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes." },
     ],
   }),
   component: ToegangPage,
