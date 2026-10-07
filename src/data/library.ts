@@ -31,6 +31,15 @@ import coverStitch from "@/assets/stitch-placeholder.png.asset.json";
 import coverZootopia from "@/assets/zootopia-placeholder.png.asset.json";
 import coverLalafanfan from "@/assets/lalafanfan-eend-placeholder.jpg.asset.json";
 import coverBlueyHuis from "@/assets/bluey-huis-activiteiten-placeholder.png.asset.json";
+import coverPm0 from "@/assets/anna-elsa-mini-placeholder.png.asset.json";
+import coverPm1 from "@/assets/eenhoorn-placeholder.jpg.asset.json";
+import coverPm2 from "@/assets/elsa-anna-placeholder.jpg.asset.json";
+import coverPm3 from "@/assets/harry-potter-placeholder.jpg.asset.json";
+import coverPm4 from "@/assets/prinsessen-placeholder.png.asset.json";
+import coverPm5 from "@/assets/rapunzel-placeholder.jpg.asset.json";
+import coverPm6 from "@/assets/vaiana-moana-placeholder.jpg.asset.json";
+import coverPm7 from "@/assets/wednesday-enid-placeholder.jpg.asset.json";
+import coverPm8 from "@/assets/wednesday-placeholder.jpg.asset.json";
 
 
 export type Theme = {
@@ -332,6 +341,15 @@ const bookImages: Record<string, string> = {
   zootopia: coverZootopia.url,
   "lalafanfan-eend": coverLalafanfan.url,
   "bluey-huis-activiteiten": coverBlueyHuis.url,
+  "anna-elsa-mini": coverPm0.url,
+  "eenhoorn": coverPm1.url,
+  "elsa-anna": coverPm2.url,
+  "harry-potter": coverPm3.url,
+  "prinsessen": coverPm4.url,
+  "rapunzel": coverPm5.url,
+  "vaiana-moana": coverPm6.url,
+  "wednesday-enid": coverPm7.url,
+  "wednesday": coverPm8.url,
 };
 for (const b of books) {
   if (bookImages[b.slug]) b.image = bookImages[b.slug];
