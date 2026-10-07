@@ -24,6 +24,13 @@ import coverAvatar from "@/assets/avatar-world-placeholder.png.asset.json";
 import coverHuntrix from "@/assets/huntrix-2-placeholder.png.asset.json";
 import coverCapybara from "@/assets/capybara-house-placeholder.png.asset.json";
 import coverEerste from "@/assets/mijn-eerste-interactieve-boek-placeholder.png.asset.json";
+import coverBluey from "@/assets/bluey-placeholder.jpg.asset.json";
+import coverPaw from "@/assets/paw-patrol-placeholder.jpg.asset.json";
+import coverPeppa from "@/assets/peppa-pig-placeholder.jpg.asset.json";
+import coverStitch from "@/assets/stitch-placeholder.png.asset.json";
+import coverZootopia from "@/assets/zootopia-placeholder.png.asset.json";
+import coverLalafanfan from "@/assets/lalafanfan-eend-placeholder.jpg.asset.json";
+import coverBlueyHuis from "@/assets/bluey-huis-activiteiten-placeholder.png.asset.json";
 
 
 export type Theme = {
@@ -318,6 +325,13 @@ const bookImages: Record<string, string> = {
   huntrix: coverHuntrix.url,
   "capybara-house": coverCapybara.url,
   "mijn-eerste-interactieve-boek": coverEerste.url,
+  bluey: coverBluey.url,
+  "paw-patrol": coverPaw.url,
+  "peppa-pig": coverPeppa.url,
+  stitch: coverStitch.url,
+  zootopia: coverZootopia.url,
+  "lalafanfan-eend": coverLalafanfan.url,
+  "bluey-huis-activiteiten": coverBlueyHuis.url,
 };
 for (const b of books) {
   if (bookImages[b.slug]) b.image = bookImages[b.slug];
