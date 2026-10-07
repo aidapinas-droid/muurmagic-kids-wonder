@@ -32,8 +32,7 @@ function PrivacyPage() {
           Privacybeleid
         </h1>
         <p className="mt-4 font-nunito text-base leading-relaxed text-muted-foreground">
-          Deze tekst is een placeholder. Hier komt binnenkort ons volledige
-          privacybeleid te staan.
+          Het volledige privacybeleid is niet beschikbaar.
         </p>
         <div className="mt-8 space-y-6 font-nunito text-sm leading-relaxed text-muted-foreground">
           <Block title="Welke gegevens verzamelen we?" />
@@ -51,7 +50,7 @@ function Block({ title }: { title: string }) {
   return (
     <section>
       <h2 className="font-baloo text-xl font-extrabold text-foreground">{title}</h2>
-      <p className="mt-2">Tekst volgt binnenkort.</p>
+      <p className="mt-2">Deze informatie is niet beschikbaar.</p>
     </section>
   );
 }
