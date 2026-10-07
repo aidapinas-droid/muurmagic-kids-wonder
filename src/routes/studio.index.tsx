@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { requireAdmin } from "@/lib/vault.functions";
 
 export const Route = createFileRoute("/studio/")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/studio/")({
       { name: "twitter:card", content: "summary" },
     ],
   }),
+  beforeLoad: () => requireAdmin(),
   component: StudioHome,
 });
 
