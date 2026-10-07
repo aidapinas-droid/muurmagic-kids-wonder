@@ -46,9 +46,17 @@ function BookPage() {
       <main>
         <section className="bg-gradient-soft py-14 sm:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-            <div className="flex aspect-square items-center justify-center rounded-[2rem] border-4 border-card bg-card/70 font-nunito text-base font-semibold text-muted-foreground shadow-magic">
-              📸 Productfoto volgt binnenkort
-            </div>
+            {book.image ? (
+              <img
+                src={book.image}
+                alt={book.title}
+                className="aspect-square w-full rounded-[2rem] border-4 border-card bg-card/70 object-contain shadow-magic"
+              />
+            ) : (
+              <div className="flex aspect-square items-center justify-center rounded-[2rem] border-4 border-card bg-card/70 font-nunito text-base font-semibold text-muted-foreground shadow-magic">
+                📸 Productfoto volgt binnenkort
+              </div>
+            )}
 
             <div>
               {theme && (

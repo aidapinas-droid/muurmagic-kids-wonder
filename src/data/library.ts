@@ -20,6 +20,10 @@ import themaGames from "@/assets/thema-games.png.asset.json";
 import themaVoertuigen from "@/assets/thema-voertuigen.webp.asset.json";
 import themaMuziek from "@/assets/thema-muziek.webp.asset.json";
 import themaDieren from "@/assets/dieren-vriendjes-mockup.png.asset.json";
+import coverAvatar from "@/assets/avatar-world-placeholder.png.asset.json";
+import coverHuntrix from "@/assets/huntrix-2-placeholder.png.asset.json";
+import coverCapybara from "@/assets/capybara-house-placeholder.png.asset.json";
+import coverEerste from "@/assets/mijn-eerste-interactieve-boek-placeholder.png.asset.json";
 
 
 export type Theme = {
@@ -105,6 +109,7 @@ export type Book = {
   learn: string[];
   contents: string[];
   payhipUrl: string;
+  image?: string;
 };
 
 export const PAYHIP_URL = "https://payhip.com/muurmagic";
@@ -273,9 +278,28 @@ export const books: Book[] = [
     "muziek",
     "Interactief speelboek vol muziek, trends en kleurrijke figuren. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
   ),
+  ...makeBooks(
+    ["Capybara House"],
+    "dieren",
+    "Interactief speelboek met bekende vriendjes. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
+  ...makeBooks(
+    ["Mijn Eerste Interactieve Boek"],
+    "populaire-themas",
+    "Een van de favoriete interactieve speelboeken van MuurMagic. Geprint, gelamineerd en met velcro bevestigd, zodat kinderen er steeds opnieuw mee kunnen spelen.",
+  ),
 ];
 
-
+/** Tijdelijke covers per product-slug. */
+const bookImages: Record<string, string> = {
+  "avatar-wereld": coverAvatar.url,
+  huntrix: coverHuntrix.url,
+  "capybara-house": coverCapybara.url,
+  "mijn-eerste-interactieve-boek": coverEerste.url,
+};
+for (const b of books) {
+  if (bookImages[b.slug]) b.image = bookImages[b.slug];
+}
 
 export function getBook(slug: string) {
   return books.find((b) => b.slug === slug);

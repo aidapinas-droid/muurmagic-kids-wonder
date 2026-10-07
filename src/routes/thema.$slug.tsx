@@ -72,9 +72,18 @@ function ThemePage() {
                   params={{ slug: b.slug }}
                   className="group rounded-3xl border border-border/60 bg-card p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:shadow-magic"
                 >
-                  <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-soft font-nunito text-sm font-semibold text-muted-foreground">
-                    📸 Foto volgt binnenkort
-                  </div>
+                  {b.image ? (
+                    <img
+                      src={b.image}
+                      alt={b.title}
+                      loading="lazy"
+                      className="aspect-[4/3] w-full rounded-2xl bg-gradient-soft object-contain"
+                    />
+                  ) : (
+                    <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-soft font-nunito text-sm font-semibold text-muted-foreground">
+                      📸 Foto volgt binnenkort
+                    </div>
+                  )}
                   <div className="mt-4">
                     <ProductLabelList labels={b.labels} />
                   </div>
