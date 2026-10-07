@@ -187,7 +187,7 @@ export const VARIANTS: Variant[] = [
 ];
 
 const DEFAULTS = {
-  age: "Richtlijn: 2 tot 6 jaar.",
+  age: "4–8 jaar",
   learn: [
     "Herkennen en benoemen",
     "Fijne motoriek door plakken en matchen",
@@ -334,7 +334,7 @@ export const books: Book[] = [
     themeSlug: "dieren",
     labels: [],
     description: "Lalafanfan Eend uit het bestaande assortiment (PATO LALAFANFAN).",
-    age: "Leeftijdsadvies nog niet beschikbaar.",
+    age: "4–8 jaar",
     learn: [],
     contents: [],
   },
@@ -345,7 +345,7 @@ export const books: Book[] = [
     themeSlug: "dieren",
     labels: [],
     description: "Een activiteitenset van 4 pagina's rond het huis van Bluey (Fichas casita de Bluey). Geen volledig speelboek.",
-    age: "Leeftijdsadvies nog niet beschikbaar.",
+    age: "4–8 jaar",
     learn: [],
     contents: ["Activiteitenset van 4 pagina's"],
   },
