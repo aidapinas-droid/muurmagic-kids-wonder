@@ -2,14 +2,12 @@ export type ProductLabel =
   | "nieuw"
   | "populair"
   | "bestseller"
-  | "binnenkort"
   | "beperkt";
 
 export const labelMeta: Record<ProductLabel, { emoji: string; text: string; className: string }> = {
   nieuw: { emoji: "🆕", text: "Nieuw", className: "bg-mint text-mint-foreground" },
   populair: { emoji: "🔥", text: "Populair", className: "bg-rose text-rose-foreground" },
   bestseller: { emoji: "⭐", text: "Bestseller", className: "bg-sun text-foreground" },
-  binnenkort: { emoji: "⏳", text: "Binnenkort", className: "bg-muted text-foreground" },
   beperkt: { emoji: "🎯", text: "Beperkt", className: "bg-primary text-primary-foreground" },
 };
 

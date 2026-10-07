@@ -10,7 +10,7 @@ export function ThemeLibrary() {
             Kies jouw thema
           </h2>
           <p className="mt-4 font-nunito text-base text-muted-foreground sm:text-lg">
-            Kies een wereld.
+            Kies een wereld
           </p>
         </div>
 
