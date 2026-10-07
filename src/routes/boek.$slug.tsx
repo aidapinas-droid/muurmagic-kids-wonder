@@ -53,9 +53,7 @@ function BookPage() {
                 className="aspect-square w-full rounded-[2rem] border-4 border-card bg-card/70 object-contain shadow-magic"
               />
             ) : (
-              <div className="flex aspect-square items-center justify-center rounded-[2rem] border-4 border-card bg-card/70 font-nunito text-base font-semibold text-muted-foreground shadow-magic">
-                📸 Productfoto volgt binnenkort
-              </div>
+              <div aria-hidden="true" className="aspect-square rounded-[2rem] border-4 border-card bg-card/70 shadow-magic" />
             )}
 
             <div>

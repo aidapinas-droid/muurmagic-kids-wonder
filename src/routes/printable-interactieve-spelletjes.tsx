@@ -37,6 +37,8 @@ export const Route = createFileRoute("/printable-interactieve-spelletjes")({
         content:
           "Print. Knip. Lamineer. Speel. Interactieve speelboeken, printables en DIY sets voor kinderen van 2 tot 8 jaar. Perfect voor thuis, school, BSO en feestjes.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: PrintablePage,
@@ -684,14 +686,6 @@ function ProductsSection() {
   return (
     <section className="bg-background py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Photo banner */}
-        <div
-          className="mb-10 rounded-2xl border border-gold/40 px-5 py-4 text-center font-nunito text-sm font-bold text-foreground shadow-soft sm:text-base"
-          style={{ backgroundColor: "#FFF3CC" }}
-        >
-          📸 Productfoto's komen binnenkort — maar je kunt nu al bestellen!
-        </div>
-
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {products.map((p) => (
             <ProductCard key={p.id} product={p} />

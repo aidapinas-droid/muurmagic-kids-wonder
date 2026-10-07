@@ -80,9 +80,7 @@ function ThemePage() {
                       className="aspect-[4/3] w-full rounded-2xl bg-gradient-soft object-contain"
                     />
                   ) : (
-                    <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-soft font-nunito text-sm font-semibold text-muted-foreground">
-                      📸 Foto volgt binnenkort
-                    </div>
+                    <div aria-hidden="true" className="aspect-[4/3] rounded-2xl bg-gradient-soft" />
                   )}
                   <div className="mt-4">
                     <ProductLabelList labels={b.labels} />
