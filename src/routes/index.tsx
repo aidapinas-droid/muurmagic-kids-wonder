@@ -8,6 +8,7 @@ import { OrderOptions } from "@/components/OrderOptions";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhyMuurMagic } from "@/components/WhyMuurMagic";
 import { PersonalOrder } from "@/components/PersonalOrder";
+import { KidsPlayGallery } from "@/components/KidsPlayGallery";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -53,6 +54,7 @@ function Index() {
         <OrderOptions />
         <HowItWorks />
         <WhyMuurMagic />
+        <KidsPlayGallery />
         <PersonalOrder />
       </main>
       <Footer />
